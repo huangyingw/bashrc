@@ -15,8 +15,8 @@ else
       	  echo " $0: orphan lock file warning. Lock file deleted."
       	  echo $$ > /tmp/program.lock
     rsync -ahHv --log-file=/root/rlog --delete-after \
-      --exclude "*dapper*" --exclude "*hardy*" --exclude "*intrepid*" --exclude "*jaunty*" \
-      --exclude "*powerpc*" --exclude "*sparc*" \
+      --exclude \*dapper\* --exclude \*hardy\* --exclude \*intrepid\* --exclude \*jaunty\* \
+      --exclude \*powerpc\* --exclude \*sparc\* \
     ${RSYNCSOURCE} ${BASEDIR}
 fi
 
