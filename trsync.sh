@@ -9,6 +9,5 @@ then
 fi
 
 rsync -aHinv --delete-after \
-		--exclude *.sw* *.orig \
-		"${SOURCE}" "${TARGET}"
+		"${SOURCE}" "${TARGET}"|vim -
 
