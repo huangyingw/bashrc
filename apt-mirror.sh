@@ -21,8 +21,8 @@ if [ -f "${LCK_FILE}" ]; then
     # Echo current PID into lock file
   echo $$ > "${LCK_FILE}"
   rsync -ahHv --log-file=/root/rlog --delete-after \
-      --exclude "*dapper*" --exclude "*hardy*" --exclude "*intrepid*" --exclude "*jaunty*" \
-      --exclude "*powerpc*" --exclude "*sparc*" \
+      --exclude \*dapper\* --exclude \*hardy\* --exclude \*intrepid\* --exclude \*jaunty\* \
+      --exclude \*powerpc\* --exclude \*sparc\* \
     ${RSYNCSOURCE} ${BASEDIR}
   else
       # the process IS running

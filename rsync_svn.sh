@@ -1,4 +1,3 @@
-
 #!/bin/bash 
 SOURCE=$1
 TARGET=$2
@@ -8,6 +7,7 @@ then
     mkdir -p "${TARGET}"
 fi
 
-rsync -aHinv --delete-after \
-		"${SOURCE}" "${TARGET}"|vim -
+rsync -aH --delete-after \
+		--exclude .svn --exclude *.sw* *.orig \
+		"${SOURCE}" "${TARGET}"
 
