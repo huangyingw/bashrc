@@ -4,17 +4,6 @@ check_running.sh.lck
 log
 *.bak
 *.o
-android.csv
-atunes/
-bin/
-bookmarks.HTML
-check_disk.log
-core
-coreutils_7.4-2ubuntu1.diff.gz
-coreutils_7.4-2ubuntu1.dsc
-coreutils_7.4.orig.tar.gz
-data/
-demo
 df.txt
 disk_list.txt
 dmidecode.txt
@@ -22,7 +11,6 @@ eglibc_2.10.1-0ubuntu15.diff.gz
 eglibc_2.10.1-0ubuntu15.dsc
 examples.desktop
 fdisk.txt
-re2/
 resolv.conf
 rlog
 root/
