@@ -2,7 +2,7 @@
 
 x=`pwd`
 echo ${x}
-x=`echo ${x} | sed -e 's/\/home\/yinghuang\//\/media\/smb\//;s/\/media\/volgrp\//\/media\/smb\//;s/\/root\//\/media\/smb\//;'`
+x=`echo ${x} | sed -e "s|$HOME|/media/smb|"`
 #x=/media/smb/${x}
 echo ${x}
 
