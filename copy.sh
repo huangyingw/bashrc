@@ -1,0 +1,6 @@
+#!/bin/bash
+RSYNCSOURCE=$1
+RSYNCTARGET=$2
+
+rsync -aH \
+	"${RSYNCSOURCE}" "${RSYNCTARGET}" \
