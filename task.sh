@@ -1,5 +1,5 @@
 #! /bin/bash
-check_bool=`/home/yinghuang/myproject/git/linux/bashrc/check_disk.sh`
+check_bool=`~/myproject/git/linux/bashrc/check_disk.sh`
 
 
 if [ ${check_bool} -eq 1 ];   
