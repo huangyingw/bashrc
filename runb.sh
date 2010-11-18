@@ -1,5 +1,5 @@
 #!/bin/bash
-make
+make -B
 if [ -f "run.sh" ]; then
   ./run.sh
 else

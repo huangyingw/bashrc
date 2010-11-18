@@ -1,1 +1,2 @@
-ntpdate cn.pool.ntp.org
+cp -fv /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+&& ntpdate cn.pool.ntp.org
