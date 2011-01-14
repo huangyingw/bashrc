@@ -1,7 +1,7 @@
 #! /bin/sh
-find $1 \( -path \.svn -o -path \.git -o -name \.hg \) -prune -o \( -name \*\.c -o -name \*\.cc  -o -name \.gitignore -o -name \*\.h -o -name \*\.cpp -o -name \*\.hpp -o -name \*\.sh -o -name YBUILD -o -name [m,M]akefile \) -type f | while read -r file
+find $1 \( -path \.svn -o -path \.git -o -name \.hg \) -prune -o \( -name \*\.c -o -name \*\.cc  -o -name \*\.properties -o -name \.gitignore -o -name \*\.h -o -name \*\.cpp -o -name \*\.hpp -o -name \*\.sh -o -name YBUILD -o -name [m,M]akefile \) -type f | while read -r file
 do
   sed -n "s|\<$2\>|\<$3\>|gi;p" $file  >> log
-  sed -ie "s|$2|$3|gi" $file
+  sed -i "s|\<$2\>|\<$3\>|gi" $file
 done
 
