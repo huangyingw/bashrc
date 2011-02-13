@@ -1,5 +1,5 @@
 #! /bin/bash
-check_file=/root/disk_list.txt
+check_file=~/disk_list.txt
 result=1
 for file in `cat $check_file`
 do

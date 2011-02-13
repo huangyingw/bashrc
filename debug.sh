@@ -1,2 +1,7 @@
 #! /bin/bash
-valgrind -v --leak-check=full --log-file=error ./run
+if [ -z "$1" ];
+then
+  valgrind -v --leak-check=full ./run
+else
+  valgrind -v --leak-check=full $1
+fi

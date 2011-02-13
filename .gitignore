@@ -31,3 +31,4 @@ workspace/
 diff.txt
 apt-mirror.sh.lck
 *.orig
+core
