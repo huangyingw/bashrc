@@ -19,6 +19,7 @@ if [ -f "${LCK_FILE}" ]; then
     echo $$ > "${LCK_FILE}"
     rsync -ahHv --log-file=/home/huangyingw/rlog --delete-after \
       --exclude \*.tar  --exclude \*.tar.gz --exclude \*.log \
+      --exclude vmo4_1\* --exclude isf2_1Manager_linux2.6-x86.bin \
       ${RSYNCSOURCE} ${BASEDIR}
   else
     # the process IS running
@@ -29,4 +30,3 @@ if [ -f "${LCK_FILE}" ]; then
 else
   echo $$ > "${LCK_FILE}"
 fi
-
