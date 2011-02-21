@@ -17,7 +17,7 @@ if [ -f "${LCK_FILE}" ]; then
     # The process is not running
     # Echo current PID into lock file
     echo $$ > "${LCK_FILE}"
-    rsync -ahHv --log-file=/home/huangyingw/rlog --delete-after \
+    rsync -ahHv --log-file=/root/rlog --delete-after \
       --exclude \*.tar  --exclude \*.tar.gz --exclude \*.log \
       --exclude vmo4_1\* --exclude isf2_1Manager_linux2.6-x86.bin \
       --exclude isf2_1Agent_linux2.6-x86 --exclude ego \
