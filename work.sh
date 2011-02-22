@@ -27,6 +27,7 @@ if [ -f "${LCK_FILE}" ]; then
       --exclude "ego*" \
       --exclude isf-gui.zip \
       --exclude for_test \
+      --exclude rfi \
       ${RSYNCSOURCE} ${BASEDIR}
   else
     # the process IS running
