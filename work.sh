@@ -23,7 +23,7 @@ if [ -f "${LCK_FILE}" ]; then
       --exclude \*.log \
       --exclude vmo4_1\* \
       --exclude isf2_1Manager_linux2.6-x86.bin \
-      --exclude isf2_1Agent_linux2.6-x86 \
+      --exclude "isf2_1Agent_linux2.6-x86*" \
       --exclude "ego*" \
       ${RSYNCSOURCE} ${BASEDIR}
   else
