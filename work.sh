@@ -25,6 +25,8 @@ if [ -f "${LCK_FILE}" ]; then
       --exclude isf2_1Manager_linux2.6-x86.bin \
       --exclude "isf2_1Agent_linux2.6-x86*" \
       --exclude "ego*" \
+      --exclude isf-gui.zip \
+      --exclude for_test \
       ${RSYNCSOURCE} ${BASEDIR}
   else
     # the process IS running
