@@ -3,6 +3,7 @@
 RSYNCSOURCE=/pcc/cnbuild/build/output/vmo.isf2_1_pudong
 
 BASEDIR=/media/storage/work/platform/cnbuild/build/output/vmo.isf2_1_pudong
+puran=180.168.35.141:/root/backup/vmo.isf2_1_pudong/
 
 # check to see if script is already running
 PDIR=${0%`basename $0`}
@@ -30,6 +31,8 @@ if [ -f "${LCK_FILE}" ]; then
       --exclude for_test \
       --exclude rfi \
       ${RSYNCSOURCE} ${BASEDIR}
+    rsync -ahHv -e ssh --log-file=/root/rlog --delete-after \
+      ${BASEDIR} ${puran}
   else
     # the process IS running
     # handle it
