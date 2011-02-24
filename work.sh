@@ -2,8 +2,10 @@
 
 RSYNCSOURCE=/pcc/cnbuild/build/output/vmo.isf2_1_pudong
 
-BASEDIR=/media/storage/work/platform/cnbuild/build/output/vmo.isf2_1_pudong
-puran=180.168.35.141:/root/backup/vmo.isf2_1_pudong/
+BASEDIR=/media/storage/work/platform/cnbuild/build/output/vmo.isf2_1_pudong/
+PURAN=180.168.35.141:/root/backup/vmo.isf2_1_pudong/
+PATCHSOURCE=/home/huangyingw/forTcloudCustom/
+PATCHTARGET=180.168.35.141:/root/forTcloudCustom/
 
 # check to see if script is already running
 PDIR=${0%`basename $0`}
@@ -32,7 +34,20 @@ if [ -f "${LCK_FILE}" ]; then
       --exclude rfi \
       ${RSYNCSOURCE} ${BASEDIR}
     rsync -ahHv -e ssh --log-file=/root/rlog --delete-after \
-      ${BASEDIR} ${puran}
+      --exclude \*.tar \
+      --exclude \*.tar.gz \
+      --exclude \*.log \
+      --exclude vmo4_1\* \
+      --exclude isf2_1Manager_linux2.6-x86_full.bin \
+      --exclude isf2_1Manager_linux2.6-x86.bin \
+      --exclude "isf2_1Agent_linux2.6-x86*" \
+      --exclude "ego*" \
+      --exclude isf-gui.zip \
+      --exclude for_test \
+      --exclude rfi \
+      ${BASEDIR} ${PURAN}
+    rsync -ahHv -e ssh --log-file=/root/rlog --delete-after \
+      ${PATCHSOURCE} ${PATCHTARGET}
   else
     # the process IS running
     # handle it
@@ -42,3 +57,4 @@ if [ -f "${LCK_FILE}" ]; then
 else
   echo $$ > "${LCK_FILE}"
 fi
+
