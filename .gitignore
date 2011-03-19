@@ -32,3 +32,5 @@ diff.txt
 apt-mirror.sh.lck
 *.orig
 core
+work.sh.lck
+*.lck
