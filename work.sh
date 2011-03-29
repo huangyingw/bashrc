@@ -6,6 +6,10 @@ BASEDIR=/media/storage/work/platform/cnbuild/build/output/vmo.isf2_1_pudong/
 PURAN=180.168.35.141:/root/backup/vmo.isf2_1_pudong/
 PATCHSOURCE=/home/huangyingw/forTcloudCustom/
 PATCHTARGET=180.168.35.141:/root/forTcloudCustom/
+oracle_xa=/home/yhzhang/scratch/tools/oracle_linux/
+oracle_local_xa=/media/storage/software/oracle/oracle_linux/
+oracle_local=/media/storage/software/oracle/
+oracle_remote=180.168.35.141:/root/software/oracle/
 
 # check to see if script is already running
 PDIR=${0%`basename $0`}
@@ -25,7 +29,6 @@ if [ -f "${LCK_FILE}" ]; then
       --exclude \*.tar.gz \
       --exclude \*.log \
       --exclude vmo4_1\* \
-      --exclude isf2_1Manager_linux2.6-x86_full.bin \
       --exclude isf2_1Manager_linux2.6-x86.bin \
       --exclude "isf2_1Agent_linux2.6-x86*" \
       --exclude "ego*" \
@@ -38,7 +41,6 @@ if [ -f "${LCK_FILE}" ]; then
       --exclude \*.tar.gz \
       --exclude \*.log \
       --exclude vmo4_1\* \
-      --exclude isf2_1Manager_linux2.6-x86_full.bin \
       --exclude isf2_1Manager_linux2.6-x86.bin \
       --exclude "isf2_1Agent_linux2.6-x86*" \
       --exclude "ego*" \
@@ -48,6 +50,10 @@ if [ -f "${LCK_FILE}" ]; then
       ${BASEDIR} ${PURAN}
     rsync -ahHv -e ssh --log-file=/root/rlog --delete-after \
       ${PATCHSOURCE} ${PATCHTARGET}
+    rsync -ahHv -e ssh --log-file=/root/rlog --delete-after \
+      ${oracle_xa} ${oracle_local_xa}
+    rsync -ahHv -e ssh --log-file=/root/rlog --delete-after \
+      ${oracle_local} ${oracle_remote}
   else
     # the process IS running
     # handle it
