@@ -1,9 +1,14 @@
 #!/bin/bash
-RSYNCSOURCE=$1
-RSYNCTARGET=$2
+SOURCE=$1
+TARGET=$2
+
+if [ ! -d "${TARGET}" ];
+then   
+    mkdir -p "${TARGET}"
+fi
 
 rsync -aH \
-	"${RSYNCSOURCE}" "${RSYNCTARGET}" \
+	"${SOURCE}" "${TARGET}" \
 && rsync -aH \
-	"${RSYNCSOURCE}" "${RSYNCTARGET}" \
-&& rm -fr "${RSYNCSOURCE}"
+	"${SOURCE}" "${TARGET}" \
+&& rm -fr "${SOURCE}"
