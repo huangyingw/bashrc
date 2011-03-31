@@ -1,9 +1,9 @@
 #! /bin/bash
 
-RSYNCSOURCE=/pcc/cnbuild/build/output/vmo.isf2_1_pudong
+RSYNCSOURCE=/pcc/cnbuild/build/output/vmo.isf2_1_pudong_drop2/
 
-BASEDIR=/media/storage/work/platform/cnbuild/build/output/vmo.isf2_1_pudong/
-PURAN=180.168.35.141:/root/backup/vmo.isf2_1_pudong/
+BASEDIR=/media/storage/work/platform/cnbuild/build/output/vmo.isf2_1_pudong_drop2/
+PURAN=180.168.35.141:/root/backup/vmo.isf2_1_pudong_drop2/
 PATCHSOURCE=/home/huangyingw/forTcloudCustom/
 PATCHTARGET=180.168.35.141:/root/forTcloudCustom/
 oracle_xa=/home/yhzhang/scratch/tools/oracle_linux/
@@ -29,8 +29,8 @@ if [ -f "${LCK_FILE}" ]; then
       --exclude \*.tar.gz \
       --exclude \*.log \
       --exclude vmo4_1\* \
-      --exclude isf2_1Manager_linux2.6-x86.bin \
-      --exclude "isf2_1Agent_linux2.6-x86*" \
+      --exclude isf2_2Manager_linux2.6-x86.bin \
+      --exclude "isf2_2Agent_linux2.6-x86*" \
       --exclude "ego*" \
       --exclude isf-gui.zip \
       --exclude for_test \
@@ -41,8 +41,8 @@ if [ -f "${LCK_FILE}" ]; then
       --exclude \*.tar.gz \
       --exclude \*.log \
       --exclude vmo4_1\* \
-      --exclude isf2_1Manager_linux2.6-x86.bin \
-      --exclude "isf2_1Agent_linux2.6-x86*" \
+      --exclude isf2_2Manager_linux2.6-x86.bin \
+      --exclude "isf2_2Agent_linux2.6-x86*" \
       --exclude "ego*" \
       --exclude isf-gui.zip \
       --exclude for_test \
