@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ -z "$3" ];
 then
-		find "$1" \( -name \.svn -o -name \.git -o -name \.hg \) -prune -o \( \
+		find "$1" \( -name \.svn -o -name \.git -o -name \.hg -o -name find.cc \) -prune -o \( \
       -name \*\.c \
       -o -name \*\.cc \
       -o -name \*\.java \
@@ -20,7 +20,7 @@ then
  \) \
  -exec fgrep -wnH  "$2" {} \;
 else
-		find "$1" \( -name \.svn -o -name \.git -o -name \.hg \) -prune -o \(  \
+		find "$1" \( -name \.svn -o -name \.git -o -name \.hg -o -name find.cc \) -prune -o \(  \
       -o -name \*\.cc \
       -o -name \*\.java \
       -o -name \*\.xml \
