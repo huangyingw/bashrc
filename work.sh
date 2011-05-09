@@ -1,14 +1,16 @@
 #! /bin/bash
 
 RSYNCSOURCE=/pcc/cnbuild/build/output/vmo.isf2_1_pudong_drop2/
+mainsource=/pcc/cnbuild/build/output/vmo.mainline/
+localmain=/media/volgrp/software/work/platform/cnbuild/vmo.mainline/
 
-BASEDIR=/media/storage/work/platform/cnbuild/build/output/vmo.isf2_1_pudong_drop2/
+BASEDIR=/media/volgrp/software/work/platform/cnbuild/vmo.isf2_1_pudong_drop2/
 PURAN=180.168.35.141:/root/backup/vmo.isf2_1_pudong_drop2/
 PATCHSOURCE=/home/huangyingw/forTcloudCustom/
 PATCHTARGET=180.168.35.141:/root/forTcloudCustom/
 oracle_xa=/home/yhzhang/scratch/tools/oracle_linux/
-oracle_local_xa=/media/storage/software/oracle/oracle_linux/
-oracle_local=/media/storage/software/oracle/
+oracle_local_xa=/media/volgrp/software/oracle/oracle_linux/
+oracle_local=/media/volgrp/software/oracle/
 oracle_remote=180.168.35.141:/root/software/oracle/
 
 # check to see if script is already running
@@ -24,6 +26,16 @@ if [ -f "${LCK_FILE}" ]; then
     # The process is not running
     # Echo current PID into lock file
     echo $$ > "${LCK_FILE}"
+    rsync -ahHv --log-file=/root/rlog --delete-after \
+      --exclude \*.tar \
+      --exclude \*.tar.gz \
+      --exclude \*.log \
+      --exclude vmo4_1\* \
+      --exclude "ego*" \
+      --exclude isf-gui.zip \
+      --exclude for_test \
+      --exclude rfi \
+      ${mainsource} ${localmain}
     rsync -ahHv --log-file=/root/rlog --delete-after \
       --exclude \*.tar \
       --exclude \*.tar.gz \
