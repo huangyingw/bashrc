@@ -5,10 +5,6 @@ mainsource=/pcc/cnbuild/build/output/vmo.mainline/
 localmain=/media/volgrp/software/work/platform/cnbuild/vmo.mainline/
 
 BASEDIR=/media/volgrp/software/work/platform/cnbuild/vmo.isf2_1_pudong_drop2/
-PATCHSOURCE=/home/huangyingw/forTcloudCustom/
-oracle_xa=/home/yhzhang/scratch/tools/oracle_linux/
-oracle_local_xa=/media/volgrp/software/oracle/oracle_linux/
-oracle_local=/media/volgrp/software/oracle/
 
 # check to see if script is already running
 PDIR=${0%`basename $0`}
@@ -38,15 +34,12 @@ if [ -f "${LCK_FILE}" ]; then
       --exclude \*.tar.gz \
       --exclude \*.log \
       --exclude vmo4_1\* \
-      --exclude isf2_2Manager_linux2.6-x86.bin \
       --exclude "isf2_2Agent_linux2.6-x86*" \
       --exclude "ego*" \
       --exclude isf-gui.zip \
       --exclude for_test \
       --exclude rfi \
       ${RSYNCSOURCE} ${BASEDIR}
-    rsync -ahHv -e ssh --log-file=/root/rlog --delete-after \
-      ${oracle_xa} ${oracle_local_xa}
   else
     # the process IS running
     # handle it
