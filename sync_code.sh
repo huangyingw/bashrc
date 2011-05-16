@@ -11,7 +11,7 @@ if [ -f "${LCK_FILE}" ]; then
     # The process is not running
     # Echo current PID into lock file
     echo $$ > "${LCK_FILE}"
-    rsync -aH --delete-after /media/volgrp/myproject/git/work/platform/cvs/ /home/yhuang/scratch/cvs/
+    rsync --log-file=/root/rlog -aH --delete-after /media/volgrp/myproject/git/work/platform/cvs/ /home/yhuang/scratch/cvs/
   else
     # the process IS running
     # handle it
