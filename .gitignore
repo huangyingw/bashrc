@@ -35,3 +35,4 @@ core
 work.sh.lck
 *.lck
 output
+vitag_file
