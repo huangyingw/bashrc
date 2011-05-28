@@ -40,6 +40,40 @@ if [ -f "${LCK_FILE}" ]; then
       --exclude for_test \
       --exclude rfi \
       ${RSYNCSOURCE} ${BASEDIR}
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/etc/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/etc/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/lib/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/lib/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/bin/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/bin/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86_64/bin/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86_64/bin/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86_64/etc/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86_64/etc/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86_64/lib/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86_64/lib/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x86/etc/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x86/etc/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x86/bin/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x86/bin/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x86/lib/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x86/lib/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x64/etc/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x64/etc/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x64/bin/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x64/bin/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x64/lib/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x64/lib/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/3rdparty/jdk/1.5.0_08/linux-x86/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/3rdparty/jdk/1.5.0_08/linux-x86/
+    rsync --log-file=/root/rlog -aH --delete-after \
+       /pcc/app/Linux_jdk1.5.0_08_x86/ /media/volgrp/myproject/git/work/platform/pcc/app/Linux_jdk1.5.0_08_x86/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/perf_ext/shared/isf2_1_pudong_drop_2/  /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/perf_ext/shared/isf2_1_pudong_drop_2/
+    rsync --log-file=/root/rlog -aH --delete-after \
+        /pcc/app/apache-ant-1.6.0/  /media/volgrp/myproject/git/work/platform/pcc/app/apache-ant-1.6.0/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      #/media/volgrp/myproject/git/work/platform/pcc/  172.20.38.125:/pcc/
   else
     # the process IS running
     # handle it
