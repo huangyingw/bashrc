@@ -1,5 +1,6 @@
 #!/bin/bash
 if  (mdadm -D -q /dev/md0 |grep -q "removed")
 then   
-	echo dangerous
+  mdadm -D -q /dev/md0 |grep -q "removed" >> $HOME/bashrc/check_raid.txt
+  echo dangerous
 fi
