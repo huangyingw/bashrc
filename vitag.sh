@@ -11,5 +11,6 @@ find `pwd`/ -type f -name "*.h" \
   -o -name "*.hpp" \
   -o -name "*.java" \
   -o -name "*.js" \
+  |sed 's/\(["'\''\]\)/\\\1/g;s/^/"/;s/$/"/' \
   > ${TARGET}
 cscope -kqR -i ${TARGET} 
