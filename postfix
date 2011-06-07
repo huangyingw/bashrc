@@ -1,6 +1,5 @@
 py
 xml
-properties
 jsp
 js
 c
@@ -9,3 +8,4 @@ cpp
 hpp
 java
 h
+sh

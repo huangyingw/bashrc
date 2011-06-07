@@ -67,13 +67,13 @@ if [ -f "${LCK_FILE}" ]; then
     rsync --log-file=/root/rlog -aH --delete-after \
       /pcc/lsfqa-trusted/3rdparty/jdk/1.5.0_08/linux-x86/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/3rdparty/jdk/1.5.0_08/linux-x86/
     rsync --log-file=/root/rlog -aH --delete-after \
-       /pcc/app/Linux_jdk1.5.0_08_x86/ /media/volgrp/myproject/git/work/platform/pcc/app/Linux_jdk1.5.0_08_x86/
+      /pcc/app/Linux_jdk1.5.0_08_x86/ /media/volgrp/myproject/git/work/platform/pcc/app/Linux_jdk1.5.0_08_x86/
     rsync --log-file=/root/rlog -aH --delete-after \
       /pcc/lsfqa-trusted/perf_ext/shared/isf2_1_pudong_drop_2/  /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/perf_ext/shared/isf2_1_pudong_drop_2/
     rsync --log-file=/root/rlog -aH --delete-after \
-        /pcc/app/apache-ant-1.6.0/  /media/volgrp/myproject/git/work/platform/pcc/app/apache-ant-1.6.0/
+      /pcc/app/apache-ant-1.6.0/  /media/volgrp/myproject/git/work/platform/pcc/app/apache-ant-1.6.0/
     rsync --log-file=/root/rlog -aH --delete-after \
-      #/media/volgrp/myproject/git/work/platform/pcc/  172.20.38.125:/pcc/
+      /pcc/lsfqa-trusted/perf_ext/shared/Excalibur/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/perf_ext/shared/Excalibur/
   else
     # the process IS running
     # handle it
@@ -83,4 +83,5 @@ if [ -f "${LCK_FILE}" ]; then
 else
   echo $$ > "${LCK_FILE}"
 fi
+
 
