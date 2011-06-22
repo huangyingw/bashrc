@@ -19,16 +19,15 @@ if [ -f "${LCK_FILE}" ]; then
     # The process is not running
     # Echo current PID into lock file
     echo $$ > "${LCK_FILE}"
-    rsync -ahHv --log-file=/root/rlog --delete-after \
-      --exclude \*.tar \
-      --exclude \*.tar.gz \
-      --exclude \*.log \
-      --exclude vmo4_1\* \
-      --exclude "ego*" \
-      --exclude isf-gui.zip \
-      --exclude for_test \
-      --exclude rfi \
-      ${mainsource} ${localmain}
+    rsync -ahHv --log-file=/root/rlog --delete-after ${mainsource} ${localmain}
+      #--exclude \*.tar \
+      #--exclude \*.tar.gz \
+      #--exclude \*.log \
+      #--exclude vmo4_1\* \
+      #--exclude "ego*" \
+      #--exclude isf-gui.zip \
+      #--exclude for_test \
+      #--exclude rfi \
     rsync -ahHv --log-file=/root/rlog --delete-after \
       --exclude \*.tar \
       --exclude \*.tar.gz \
@@ -74,6 +73,10 @@ if [ -f "${LCK_FILE}" ]; then
       /pcc/app/apache-ant-1.6.0/  /media/volgrp/myproject/git/work/platform/pcc/app/apache-ant-1.6.0/
     rsync --log-file=/root/rlog -aH --delete-after \
       /pcc/lsfqa-trusted/perf_ext/shared/Excalibur/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/perf_ext/shared/Excalibur/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/cnbuild/build/output/RTM2.0_SS_POC/ /media/volgrp/software/work/platform/cnbuild/build/output/RTM2.0_SS_POC/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/shared/mainline/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/shared/mainline/
   else
     # the process IS running
     # handle it
@@ -83,5 +86,3 @@ if [ -f "${LCK_FILE}" ]; then
 else
   echo $$ > "${LCK_FILE}"
 fi
-
-

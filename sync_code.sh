@@ -14,7 +14,7 @@ if [ -f "${LCK_FILE}" ]; then
     rsync --log-file=/root/rlog -aH -e ssh --delete-after \
       --exclude dists \
       --exclude build \
-    /media/volgrp/myproject/git/work/platform/cvs/  172.20.4.119:/root/myproject/git/work/platform/cvs/
+    /media/volgrp/myproject/git/work/platform/cvs/  172.20.4.135:/root/myproject/git/work/platform/cvs/
   else
     # the process IS running
     # handle it
