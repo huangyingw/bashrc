@@ -3,8 +3,9 @@
 RSYNCSOURCE=/pcc/cnbuild/build/output/vmo.isf2_1_pudong_drop2/
 mainsource=/pcc/cnbuild/build/output/vmo.mainline/
 localmain=/media/volgrp/software/work/platform/cnbuild/vmo.mainline/
-
 BASEDIR=/media/volgrp/software/work/platform/cnbuild/vmo.isf2_1_pudong_drop2/
+jinmeisource="/pcc/cnbuild/build/output/vmo.mainline_jinmei/"
+jinmeilocal="/media/volgrp/software/work/platform/cnbuild/build/output/vmo.mainline_jinmei/"
 
 # check to see if script is already running
 PDIR=${0%`basename $0`}
@@ -28,17 +29,17 @@ if [ -f "${LCK_FILE}" ]; then
       #--exclude isf-gui.zip \
       #--exclude for_test \
       #--exclude rfi \
-    rsync -ahHv --log-file=/root/rlog --delete-after \
-      --exclude \*.tar \
-      --exclude \*.tar.gz \
-      --exclude \*.log \
-      --exclude vmo4_1\* \
-      --exclude "isf2_2Agent_linux2.6-x86*" \
-      --exclude "ego*" \
-      --exclude isf-gui.zip \
-      --exclude for_test \
-      --exclude rfi \
-      ${RSYNCSOURCE} ${BASEDIR}
+    rsync -ahHv --log-file=/root/rlog --delete-after ${RSYNCSOURCE} ${BASEDIR}
+      #--exclude \*.tar \
+      #--exclude \*.tar.gz \
+      #--exclude \*.log \
+      #--exclude vmo4_1\* \
+      #--exclude "isf2_2Agent_linux2.6-x86*" \
+      #--exclude "ego*" \
+      #--exclude isf-gui.zip \
+      #--exclude for_test \
+      #--exclude rfi \
+    rsync -ahHv --log-file=/root/rlog --delete-after ${jinmeisource} ${jinmeilocal}
     rsync --log-file=/root/rlog -aH --delete-after \
       /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/etc/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/etc/
     rsync --log-file=/root/rlog -aH --delete-after \
