@@ -2,18 +2,18 @@
 SOURCE=$1
 TARGET=$2
 
-if [ $SOURCE != $TARGET ]
+if [ "$SOURCE" != "$TARGET" ]
 then
-  if [ ! -d "${TARGET}" ];
+  if [ ! -d "$TARGET" ];
   then   
-    mkdir -p "${TARGET}"
+    mkdir -p "$TARGET"
   fi
 
   rsync -aH \
-    "${SOURCE}" "${TARGET}" \
+    "$SOURCE" "$TARGET" \
     && rsync -aH \
-    "${SOURCE}" "${TARGET}" \
-    && rm -fr "${SOURCE}"
+    "$SOURCE" "$TARGET" \
+    && rm -fr "$SOURCE"
 else
   echo "please choose the different dir!"
 fi
