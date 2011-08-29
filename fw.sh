@@ -15,6 +15,7 @@ then
       -o -name \*\.sh \
       -o -name \*\.py \
       -o -name \*\.tag \
+      -o -name \*\.sql \
       -o -name YBUILD \
       -o -name \.gitignore \
       -o -name [mM]akefile \
@@ -34,6 +35,7 @@ else
       -o -name \*\.sh \
       -o -name \*\.py \
       -o -name \*\.tag \
+      -o -name \*\.sql \
       -o -name YBUILD \
       -o -name \.gitignore \
       -o -name [mM]akefile \
