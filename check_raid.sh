@@ -3,4 +3,10 @@ if  (mdadm -D -q /dev/md0 |grep -q "removed")
 then   
   mdadm -D -q /dev/md0 |grep -q "removed" >> $HOME/bashrc/check_raid.txt
   echo dangerous
+  echo dangerous
+  echo dangerous
+else
+  echo success
+  echo success
+  echo success
 fi
