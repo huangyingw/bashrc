@@ -95,5 +95,6 @@ wicd \
 xclip \
 xorg \
 zlib1g-dev \
+virt-manager \
 --force-yes \
 -y
