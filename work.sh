@@ -1,15 +1,13 @@
 #! /bin/bash
 
 RSYNCSOURCE=/pcc/cnbuild/build/output/vmo.isf2_1_pudong_drop2/
-
-BASEDIR=/media/storage/work/platform/cnbuild/build/output/vmo.isf2_1_pudong_drop2/
-PURAN=180.168.35.141:/root/backup/vmo.isf2_1_pudong_drop2/
-PATCHSOURCE=/home/huangyingw/forTcloudCustom/
-PATCHTARGET=180.168.35.141:/root/forTcloudCustom/
-oracle_xa=/home/yhzhang/scratch/tools/oracle_linux/
-oracle_local_xa=/media/storage/software/oracle/oracle_linux/
-oracle_local=/media/storage/software/oracle/
-oracle_remote=180.168.35.141:/root/software/oracle/
+mainsource=/pcc/cnbuild/build/output/vmo.mainline/
+localmain=/media/volgrp/software/work/platform/cnbuild/vmo.mainline/
+BASEDIR=/media/volgrp/software/work/platform/cnbuild/vmo.isf2_1_pudong_drop2/
+jinmeisource="/pcc/cnbuild/build/output/vmo.mainline_jinmei/"
+jinmeilocal="/media/volgrp/software/work/platform/cnbuild/build/output/vmo.mainline_jinmei/"
+heilongjiangsource="/pcc/cnbuild/build/output/vmo.isf2_1_heilongjiang"
+heilongjianglocal="/media/volgrp/software/work/platform/cnbuild/build/output/vmo.isf2_1_heilongjiang/"
 
 # check to see if script is already running
 PDIR=${0%`basename $0`}
@@ -24,36 +22,48 @@ if [ -f "${LCK_FILE}" ]; then
     # The process is not running
     # Echo current PID into lock file
     echo $$ > "${LCK_FILE}"
-    rsync -ahHv --log-file=/root/rlog --delete-after \
-      --exclude \*.tar \
-      --exclude \*.tar.gz \
-      --exclude \*.log \
-      --exclude vmo4_1\* \
-      --exclude isf2_2Manager_linux2.6-x86.bin \
-      --exclude "isf2_2Agent_linux2.6-x86*" \
-      --exclude "ego*" \
-      --exclude isf-gui.zip \
-      --exclude for_test \
-      --exclude rfi \
-      ${RSYNCSOURCE} ${BASEDIR}
-    rsync -ahHv -e ssh --log-file=/root/rlog --delete-after \
-      --exclude \*.tar \
-      --exclude \*.tar.gz \
-      --exclude \*.log \
-      --exclude vmo4_1\* \
-      --exclude isf2_2Manager_linux2.6-x86.bin \
-      --exclude "isf2_2Agent_linux2.6-x86*" \
-      --exclude "ego*" \
-      --exclude isf-gui.zip \
-      --exclude for_test \
-      --exclude rfi \
-      ${BASEDIR} ${PURAN}
-    rsync -ahHv -e ssh --log-file=/root/rlog --delete-after \
-      ${PATCHSOURCE} ${PATCHTARGET}
-    rsync -ahHv -e ssh --log-file=/root/rlog --delete-after \
-      ${oracle_xa} ${oracle_local_xa}
-    rsync -ahHv -e ssh --log-file=/root/rlog --delete-after \
-      ${oracle_local} ${oracle_remote}
+    rsync -ahHv --log-file=/root/rlog --delete-after ${mainsource} ${localmain}
+    rsync -ahHv --log-file=/root/rlog --delete-after ${RSYNCSOURCE} ${BASEDIR}
+    rsync -ahHv --log-file=/root/rlog --delete-after ${jinmeisource} ${jinmeilocal}
+    rsync -ahHv --log-file=/root/rlog --delete-after ${heilongjiangsource} ${heilongjianglocal}
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/etc/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/etc/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/lib/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/lib/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/bin/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/bin/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86_64/bin/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86_64/bin/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86_64/etc/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86_64/etc/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86_64/lib/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86_64/lib/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x86/etc/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x86/etc/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x86/bin/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x86/bin/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x86/lib/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x86/lib/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x64/etc/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x64/etc/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x64/bin/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x64/bin/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x64/lib/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/win-x64/lib/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/3rdparty/jdk/1.5.0_08/linux-x86/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/3rdparty/jdk/1.5.0_08/linux-x86/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/app/Linux_jdk1.5.0_08_x86/ /media/volgrp/myproject/git/work/platform/pcc/app/Linux_jdk1.5.0_08_x86/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/perf_ext/shared/isf2_1_pudong_drop_2/  /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/perf_ext/shared/isf2_1_pudong_drop_2/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/app/apache-ant-1.6.0/  /media/volgrp/myproject/git/work/platform/pcc/app/apache-ant-1.6.0/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/perf_ext/shared/Excalibur/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/perf_ext/shared/Excalibur/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/cnbuild/build/output/RTM2.0_SS_POC/ /media/volgrp/software/work/platform/cnbuild/build/output/RTM2.0_SS_POC/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/vmo_monte_ext/shared/mainline/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/shared/mainline/
   else
     # the process IS running
     # handle it
@@ -63,4 +73,3 @@ if [ -f "${LCK_FILE}" ]; then
 else
   echo $$ > "${LCK_FILE}"
 fi
-
