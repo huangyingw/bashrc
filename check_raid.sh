@@ -1,6 +1,12 @@
 #!/bin/bash
-if  (mdadm -D -q /dev/md0 |grep -q "removed")
+raid_count=`mdadm -D /dev/md0 |grep "active sync"|wc -l`
+if [ $raid_count -lt 4 ] 
 then   
-  mdadm -D -q /dev/md0 |grep -q "removed" >> $HOME/bashrc/check_raid.txt
   echo dangerous
+  echo dangerous
+  echo dangerous
+else
+  echo success
+  echo success
+  echo success
 fi
