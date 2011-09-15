@@ -64,6 +64,8 @@ if [ -f "${LCK_FILE}" ]; then
       /pcc/cnbuild/build/output/RTM2.0_SS_POC/ /media/volgrp/software/work/platform/cnbuild/build/output/RTM2.0_SS_POC/
     rsync --log-file=/root/rlog -aH --delete-after \
       /pcc/lsfqa-trusted/vmo_monte_ext/shared/mainline/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/shared/mainline/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/lsfqa-trusted/Standard_Code/license/     /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/Standard_Code/license/
   else
     # the process IS running
     # handle it
@@ -73,3 +75,4 @@ if [ -f "${LCK_FILE}" ]; then
 else
   echo $$ > "${LCK_FILE}"
 fi
+
