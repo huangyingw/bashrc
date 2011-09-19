@@ -2,8 +2,7 @@
 
 x=`pwd`
 echo ${x}
-x=`echo ${x} | sed -e "s|$HOME|/media/smb|"`
-#x=/media/smb/${x}
+x=`echo ${x} | sed -e "s|/.*/myproject|/media/smb/myproject|"`
 echo ${x}
 
 if [ ! -d ".git" ];
