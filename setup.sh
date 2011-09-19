@@ -97,5 +97,6 @@ xorg \
 zlib1g-dev \
 ndisgtk \
 virt-manager \
+xmame-x \
 --force-yes \
 -y
