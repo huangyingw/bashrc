@@ -98,5 +98,6 @@ zlib1g-dev \
 ndisgtk \
 virt-manager \
 xmame-x \
+curlftpfs \
 --force-yes \
 -y
