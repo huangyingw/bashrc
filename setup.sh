@@ -96,6 +96,10 @@ zlib1g-dev \
 ndisgtk \
 virt-manager \
 xmame-x \
+mysql-server \
+mysql-client \
+php5-mysql \
+phpmyadmin \
 curlftpfs \
 --force-yes \
 -y
