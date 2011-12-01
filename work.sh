@@ -4,8 +4,6 @@ RSYNCSOURCE=/pcc/cnbuild/build/output/vmo.isf2_1_pudong_drop2/
 mainsource=/pcc/cnbuild/build/output/vmo.mainline/
 localmain=/media/volgrp/software/work/platform/cnbuild/vmo.mainline/
 BASEDIR=/media/volgrp/software/work/platform/cnbuild/vmo.isf2_1_pudong_drop2/
-jinmeisource="/pcc/cnbuild/build/output/vmo.mainline_jinmei/"
-jinmeilocal="/media/volgrp/software/work/platform/cnbuild/build/output/vmo.mainline_jinmei/"
 heilongjiangsource="/pcc/cnbuild/build/output/vmo.isf2_1_heilongjiang"
 heilongjianglocal="/media/volgrp/software/work/platform/cnbuild/build/output/vmo.isf2_1_heilongjiang/"
 
@@ -24,7 +22,6 @@ if [ -f "${LCK_FILE}" ]; then
     echo $$ > "${LCK_FILE}"
     rsync -ahHv --log-file=/root/rlog --delete-after ${mainsource} ${localmain}
     rsync -ahHv --log-file=/root/rlog --delete-after ${RSYNCSOURCE} ${BASEDIR}
-    rsync -ahHv --log-file=/root/rlog --delete-after ${jinmeisource} ${jinmeilocal}
     rsync -ahHv --log-file=/root/rlog --delete-after ${heilongjiangsource} ${heilongjianglocal}
     rsync --log-file=/root/rlog -aH --delete-after \
       /pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/etc/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/egoagent/2.0/linux2.6-glibc2.3-x86/etc/
@@ -66,6 +63,8 @@ if [ -f "${LCK_FILE}" ]; then
       /pcc/lsfqa-trusted/vmo_monte_ext/shared/mainline/ /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/vmo_monte_ext/shared/mainline/
     rsync --log-file=/root/rlog -aH --delete-after \
       /pcc/lsfqa-trusted/Standard_Code/license/     /media/volgrp/myproject/git/work/platform/pcc/lsfqa-trusted/Standard_Code/license/
+    rsync --log-file=/root/rlog -aH --delete-after \
+      /pcc/cnbuild/build/output/vmo.ISF_2_2_SZSC/ /media/volgrp/software/work/platform/cnbuild/vmo.ISF_2_2_SZSC/
   else
     # the process IS running
     # handle it
@@ -75,4 +74,3 @@ if [ -f "${LCK_FILE}" ]; then
 else
   echo $$ > "${LCK_FILE}"
 fi
-
