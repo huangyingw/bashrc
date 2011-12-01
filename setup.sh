@@ -58,8 +58,6 @@ mdadm \
 mercurial \
 mldonkey-server \
 mplayer \
-netbeans \
-network-manager \
 nfs-common \
 nfs-kernel-server \
 pkg-config \
