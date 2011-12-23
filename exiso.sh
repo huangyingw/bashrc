@@ -7,7 +7,6 @@ mount "${source}" /media/cdrom -o loop
 target="`echo "${source}" |sed  -e "s/\.iso$/\_iso/g;s/\.ISO$/\_iso/g"`"
 
 mkdir -p "${target}"
-rsync -rlptDvH  \
-  --stats --progress \
+rsync -rlptDH  \
   /media/cdrom/ "${target}" \
   && rm -fv "${source}"
