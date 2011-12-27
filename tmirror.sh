@@ -8,6 +8,6 @@ then
     mkdir -p "${TARGET}"
 fi
 
-rsync -aHinv --delete-after \
+rsync -aHinv --delete-during \
 		"${SOURCE}" "${TARGET}"|vim -
 

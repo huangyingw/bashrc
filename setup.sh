@@ -100,6 +100,7 @@ mysql-server \
 mysql-client \
 php5-mysql \
 phpmyadmin \
+gnome-color-chooser \
 curlftpfs \
 --force-yes \
 -y
