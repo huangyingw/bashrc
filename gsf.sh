@@ -1,2 +1,3 @@
 #!/bin/bash
-git log --all -- "$1"
+commit=`git log --all -- "$1" |awk 'NR==1{print $2}'`
+git branch --contains "$commit"
