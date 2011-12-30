@@ -10,4 +10,6 @@ fi
 rsync -aH --delete-during \
   --exclude fstab \
   --exclude grub.cfg \
+  --exclude hosts \
+  --exclude hostname \
   "${SOURCE}" "${TARGET}"
