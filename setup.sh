@@ -32,7 +32,6 @@ gthumb \
 hibernate \
 htop \
 kdesdk \
-kdevplatform1-libs \
 kdiff3 \
 kvpnc \
 language-pack-zh \
