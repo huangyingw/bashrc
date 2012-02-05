@@ -1,10 +1,17 @@
 #!/bin/bash
-ls .|while read ss
+if [ -z "$1" ];
+then
+  path=.
+else
+  path="$1"
+fi
+find "$path" -type d|while read ss
 do
-  cd $ss
-  if  (git status|grep -q modified:)
+  #if  [ -d ".git" ] && [git status|grep -q modified: ];
+  if  [ -d "$ss/.git" ];
   then   
+    cd $ss
     pwd
+    cd -
   fi
-  cd ..
 done
