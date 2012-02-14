@@ -8,6 +8,6 @@ then
 fi
 
 rsync -aH \
-	"$SOURCE" "$TARGET"
-rsync -aH \
+	"$SOURCE" "$TARGET" \
+&& rsync -aH \
 	"$TARGET" "$SOURCE"
