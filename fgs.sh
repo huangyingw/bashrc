@@ -5,10 +5,10 @@ then
 else
   path="$1"
 fi
-find "$path" -type d|while read ss
+find "$path" -maxdepth 1 -type d|while read ss
 do
-  #if  [ -d ".git" ] && [git status|grep -q modified: ];
-  if  [ -d "$ss/.git" ];
+  if  [ -d ".git" ] && [git status|grep -q modified: ];
+  #if  [ -d "$ss/.git" ];
   then   
     cd $ss
     pwd
