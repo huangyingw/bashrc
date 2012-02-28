@@ -17,7 +17,6 @@ doxygen \
 eclipse \
 ethtool \
 firefox \
-flashplugin-nonfree \
 g++ \
 gcc \
 gdb \
@@ -101,5 +100,6 @@ php5-mysql \
 phpmyadmin \
 gnome-color-chooser \
 curlftpfs \
+wine \
 --force-yes \
 -y
