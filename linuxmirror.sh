@@ -11,6 +11,7 @@ rsync -aH --delete-during \
   --exclude fstab \
   --exclude grub.cfg \
   --exclude hosts \
+  --exclude mdadm.conf \
   --exclude hostname \
   --exclude /boot/initrd.img-* \
   --exclude /boot/vmlinuz-* \
