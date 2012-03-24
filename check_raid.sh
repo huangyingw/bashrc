@@ -1,5 +1,5 @@
 #!/bin/bash
-raid_count=`mdadm -D /dev/md0 |grep "active sync"|wc -l`
+raid_count=`mdadm -D /dev/md/ubuntu:0 |grep "active sync"|wc -l`
 if [ $raid_count -lt 4 ] 
 then   
   echo dangerous
