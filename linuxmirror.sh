@@ -15,6 +15,7 @@ rsync -aH --delete-during \
   --exclude hostname \
   --exclude /boot/initrd.img-* \
   --exclude /boot/vmlinuz-* \
+  --exclude /var/lib/mldonkey/temp/ \
   --exclude 70-persistent-net.rules \
   --exclude interfaces \
   "${SOURCE}" "${TARGET}"
