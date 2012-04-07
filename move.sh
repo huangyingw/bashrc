@@ -14,8 +14,10 @@ function IsSlash()
 }
 IsSlash "$1"
 SOURCE=$returnstring
+IsSlash "$2"
+TARGET=$returnstring
 echo $SOURCE
-TARGET=$2
+echo $TARGET
 
 #if [ "$SOURCE" != "$TARGET" ]
 #then
