@@ -1,12 +1,19 @@
 #!/bin/bash
-case "$1" in
-  */)
-    SOURCE=$1
-    ;;
-  *)
-    SOURCE=$1"/"
-    ;;
-esac
+returnstring=""
+function IsSlash()
+{
+  var=$1
+  case $var in
+    */)
+      returnstring=$var 
+      ;;
+    *)
+      returnstring=$var"/"
+      ;;
+  esac
+}
+IsSlash "$1"
+SOURCE=$returnstring
 echo $SOURCE
 TARGET=$2
 
