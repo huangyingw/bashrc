@@ -1,16 +1,15 @@
 #!/bin/bash
-if [ -z "$1" ];
-then
-  path=.
-else
-  path="$1"
-fi
-find "$path" -maxdepth 1 -type d|while read ss
+ls .|while read ss
 do
   cd $ss
-  if  [ -d ".git" ] && [git status|grep -q modified: ];
+  if  [ -d ".git" ];
   then   
-    pwd
+    if  ( git status|grep -q modified: )
+    then
+      echo `pwd` need to save
+    fi
+  else
+    echo `pwd` need to init
   fi
   cd ..
 done
