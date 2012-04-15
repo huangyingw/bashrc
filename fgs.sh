@@ -2,9 +2,14 @@
 ls .|while read ss
 do
   cd $ss
-  if  (git status|grep -q modified:)
+  if  [ -d ".git" ];
   then   
-    pwd
+    if  ( git status|grep -q modified: )
+    then
+      echo `pwd` need to save
+    fi
+  else
+    echo `pwd` need to init
   fi
   cd ..
 done
