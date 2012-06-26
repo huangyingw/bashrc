@@ -1,5 +1,13 @@
 #!/bin/bash
-folder=`pwd | sed -e 's/\/.*\///g'`
-gh=git@github.com:huangyingw/$folder.git
-#git remote rm gh
-git remote add gh ${gh}
+ls .|while read ss
+do
+  if [ -d $ss ];
+  then
+    cd $ss
+    if  [ -d ".git" ];
+    then   
+      $HOME/bashrc/gagh.sh
+    fi
+    cd ..
+  fi
+done
