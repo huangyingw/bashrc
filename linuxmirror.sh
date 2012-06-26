@@ -16,4 +16,5 @@ rsync -aH --delete-during \
   --exclude /var/lib/mldonkey/temp/ \
   --exclude 70-persistent-net.rules \
   --exclude interfaces \
+  --exclude /etc/initramfs-tools/conf.d/resume \
   "${SOURCE}" "${TARGET}"
