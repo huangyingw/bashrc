@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 function iterate_dir(){
 for file in "$1"/*
 do
@@ -6,8 +6,8 @@ do
   then
     if [ -d "$file/.git" ];
     then
-      cd "$file"
-      $HOME/bashrc/gagh.sh
+      echo "$file"
+      $HOME/bashrc/gagh.sh "$file"
     else
       iterate_dir "$file"
     fi
