@@ -2,45 +2,55 @@
 if [ -z "$3" ];
 then
 		find "$1" \( -name \.svn -o -name \.git -o -name \.hg -o -name find.cc \) -prune -o \( \
-      -name \*\.c \
-      -o -name \*\.cc \
-      -o -name \*\.java \
-      -o -name \*\.xml \
-      -o -name \*\.cpp \
-      -o -name \*\.hpp \
-      -o -name \*\.js \
-      -o -name \*\.jsp \
-      -o -name \*\.properties \
-      -o -name \*\.h \
-      -o -name \*\.sh \
-      -o -name \*\.py \
-      -o -name \*\.tag \
-      -o -name \*\.sql \
-      -o -name \*\.xml.model \
-      -o -name YBUILD \
-      -o -name \.gitignore \
-      -o -name [mM]akefile \
+      -iname \*\.c \
+      -o -iname \*\.cc \
+      -o -iname \*\.java \
+      -o -iname \*\.xml \
+      -o -iname \*\.cpp \
+      -o -iname \*\.hpp \
+      -o -iname \*\.js \
+      -o -iname \*\.jsp \
+      -o -iname \*\.properties \
+      -o -iname \*\.h \
+      -o -iname \*\.sh \
+      -o -iname \*\.py \
+      -o -iname \*\.tag \
+      -o -iname \*\.sql \
+      -o -iname \*\.xml.model \
+      -o -iname YBUILD \
+      -o -iname \.gitignore \
+      -o -iname [mM]akefile \
+      -o -iname \*\.php \
+      -o -iname \*\.js \
+      -o -iname \*\.css \
+      -o -iname \*\.htm \
+      -o -iname \*\.html \
  \) \
  -exec fgrep -wnH  "$2" {} \;
 else
 		find "$1" \( -name \.svn -o -name \.git -o -name \.hg -o -name find.cc \) -prune -o \(  \
-      -name \*\.cc \
-      -o -name \*\.java \
-      -o -name \*\.xml \
-      -o -name \*\.cpp \
-      -o -name \*\.hpp \
-      -o -name \*\.js \
-      -o -name \*\.jsp \
-      -o -name \*\.properties \
-      -o -name \*\.h \
-      -o -name \*\.sh \
-      -o -name \*\.py \
-      -o -name \*\.tag \
-      -o -name \*\.sql \
-      -o -name \*\.xml.model \
-      -o -name YBUILD \
-      -o -name \.gitignore \
-      -o -name [mM]akefile \
+      -iname \*\.cc \
+      -o -iname \*\.java \
+      -o -iname \*\.xml \
+      -o -iname \*\.cpp \
+      -o -iname \*\.hpp \
+      -o -iname \*\.js \
+      -o -iname \*\.jsp \
+      -o -iname \*\.properties \
+      -o -iname \*\.h \
+      -o -iname \*\.sh \
+      -o -iname \*\.py \
+      -o -iname \*\.tag \
+      -o -iname \*\.sql \
+      -o -iname \*\.xml.model \
+      -o -iname YBUILD \
+      -o -iname \.gitignore \
+      -o -iname [mM]akefile \
+      -o -iname \*\.php \
+      -o -iname \*\.js \
+      -o -iname \*\.css \
+      -o -iname \*\.htm \
+      -o -iname \*\.html \
  \) \
  -exec  fgrep -wnHA$3 -B$3  "$2" {} \;
 fi
