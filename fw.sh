@@ -1,5 +1,5 @@
 #!/bin/bash
-FILE_POSTFIX=$HOME/bashrc/postfix.bak
+FILE_POSTFIX=$HOME/bashrc/postfix
 PRUNE_POSTFIX=$HOME/bashrc/prunefix
 find_params=();
 prune_params=();
