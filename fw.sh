@@ -1,5 +1,5 @@
 #!/bin/bash
-FILE_POSTFIX=$HOME/bashrc/postfix.bak
+FILE_POSTFIX=$HOME/bashrc/postfix
 find_params=(); or="";
 while read suf
 do
