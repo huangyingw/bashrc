@@ -1,6 +1,8 @@
 #!/bin/bash
-FILE_POSTFIX=$HOME/bashrc/postfix
+FILE_POSTFIX=$HOME/bashrc/postfix.bak
+PRUNE_POSTFIX=$HOME/bashrc/prunefix
 find_params=();
+prune_params=();
 or="";
 grep_params="";
 if [ -n "$3" ]
@@ -11,4 +13,10 @@ do
   find_params+=( $or "-iname" "*.$suf" )
   or="-o"
 done < "$FILE_POSTFIX"
-find "$1" "(" "${find_params[@]}" ")" -exec fgrep -wnH  $grep_params "$2" {} \;
+or="";
+while read suf
+do
+  prune_params+=( $or "-iname" "*.$suf" )
+  or="-o"
+done < "$PRUNE_POSTFIX"
+find "$1" "(" "${prune_params[@]}" "-o" "-iname" "find.cc" ")" -prune -o "(" "${find_params[@]}" ")" -exec fgrep -wnH  $grep_params "$2" {} \;
