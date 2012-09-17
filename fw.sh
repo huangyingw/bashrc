@@ -19,4 +19,4 @@ do
   prune_params+=( $or "-iname" "*.$suf" )
   or="-o"
 done < "$PRUNE_POSTFIX"
-find "$1" "(" "${prune_params[@]}" "-o" "-iname" "find.cc" ")" -prune -o "(" "${find_params[@]}" ")" -exec fgrep -wnH  $grep_params "$2" {} \;
+find "$1" "(" "${prune_params[@]}" "-o" "-iname" "find.cc" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -exec fgrep -wnH  $grep_params "$2" {} \;
