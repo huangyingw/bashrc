@@ -7,6 +7,11 @@ do
     rec_dir $1"/"$file
   else
     echo $1"/"$file
+    cd $1"/"$file
+    if  ( git status|grep -q modified: )
+    then
+      echo `pwd` need to save
+    fi 
   fi
 done
 }
