@@ -5,9 +5,9 @@ do
   folders+="$ss"
 done
 echo ${folders[@]}
-for foldera in ${folders[@]} 
+for iter in ${folders[@]} 
 do
-  echo $foldera 
+  echo $iter 
 done
 #ls .|while read ss
 #do
