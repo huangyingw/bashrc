@@ -1,28 +1,19 @@
 #!/bin/bash
-folders=();
-find . -type d|while read ss
+function rec_dir() {
+for file in `ls $1`
 do
-  folders+="$ss"
-done
-echo ${folders[@]}
-for iter in ${folders[@]} 
-do
-  echo $iter 
-done
-#ls .|while read ss
-#do
-#  if [ -d $ss ];
-#  then
-#    cd $ss
-#    if  [ -d ".git" ];
-#    then   
-#      if  ( git status|grep -q modified: )
-#      then
-#        echo `pwd` need to save
-#      fi
-#    else
-#      echo `pwd` need to init
-#    fi
-#    cd ..
-#  fi
-#done
+  if [ -d $1"/"$file -a ! -d $1"/"$file"/.git" ]
+  then
+    rec_dir $1"/"$file
+  else
+    cd $1"/"$file
+    if  ( git status|grep -q modified: )
+    then
+      echo `pwd` need to save
+    else
+      echo `pwd` need to init
+    fi 
+    cd -
+  fi
+}
+rec_dir .
