@@ -11,7 +11,7 @@ do
     then
       echo `pwd` need to save
     fi 
-    cd -
+    cd ..
   fi
 done
 }
