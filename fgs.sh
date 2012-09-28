@@ -2,7 +2,7 @@
 function rec_dir() {
 for file in `ls $1`
 do
-  if [ -d $1"/"$file ]
+  if [ -d $1"/"$file -a ! -d $1"/"$file"/.git" ]
   then
     rec_dir $1"/"$file
   else
