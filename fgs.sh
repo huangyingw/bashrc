@@ -2,18 +2,12 @@
 function rec_dir() {
 for file in `ls $1`
 do
-  if [ -d $1"/"$file -a ! -d $1"/"$file"/.git" ]
+  if [ -d $1"/"$file ]
   then
     rec_dir $1"/"$file
   else
-    cd $1"/"$file
-    if  ( git status|grep -q modified: )
-    then
-      echo `pwd` need to save
-    else
-      echo `pwd` need to init
-    fi 
-    cd -
+    echo $1"/"$file
   fi
+done
 }
 rec_dir .
