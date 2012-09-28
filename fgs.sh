@@ -7,13 +7,14 @@ do
     if [ ! -d $1"/"$file"/.git" ]
     then
       rec_dir $1"/"$file
-    else
+    elif [ -d $1"/"$file"/.git" ]
+    then
       cd $1"/"$file
       if  ( git status|grep -q modified: )
       then
         echo `pwd` need to checkin
       fi 
-      cd $1
+      cd - 1>/dev/null
     fi
   fi 
 done
