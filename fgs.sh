@@ -12,11 +12,16 @@ do
       cd $1"/"$file
       if  ( git status|grep -q modified: )
       then
-        echo `pwd` need to checkin
+        echo `pwd`
       fi 
       cd - 1>/dev/null
     fi
   fi 
 done
 }
-rec_dir .
+if [ -n "$1" ]
+then
+  rec_dir $1
+else
+  rec_dir .
+fi

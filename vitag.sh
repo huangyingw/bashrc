@@ -17,4 +17,4 @@ do
   or="-o"
 done < "$PRUNE_POSTFIX"
 find "$PWD" "(" "${prune_params[@]}" "-o" "-iname" "find.cc" ")" -a -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
-cscope -kqR -i ${TARGET} 
+cscope -qR -i ${TARGET} 
