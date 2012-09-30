@@ -28,6 +28,6 @@ do
 done < "$PRUNE_FILE"
 find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f | while read -r file
 do
-  sed -i "s/"$2"/"$3"/gi" $file
+  sed "s#$2#$3#g" "$file"
 done
 
