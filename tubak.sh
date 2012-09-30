@@ -11,4 +11,4 @@ while read suf
 do
   include_params+=( " --exclude=$suf" )
 done < "$UBAKIN"
-rsync -aH --delete-during "${exclude_params[@]}" "${include_params[@]}" / /media/volgrp/media/laptop/
+rsync -aHinv --delete-during "${exclude_params[@]}" "${include_params[@]}" / /media/volgrp/media/laptop/
