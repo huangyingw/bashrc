@@ -1,18 +1,9 @@
 #! /bin/bash
-SOURCE=$1
-TARGET=$2
-
-if [ ! -d "${TARGET}" ];
-then   
-  mkdir -p "${TARGET}"
-fi
-
-rsync -aH --delete-after \
-  --exclude=/proc \
-  --exclude=/etc/fstab \
-  --exclude=/boot/grub/grub.cfg \
-  --exclude=/lost+found \
-  --exclude=/media \
-  --exclude=/sys \
-  --include=myproject \
-  "${SOURCE}" "${TARGET}"
+UBAK=$HOME/bashrc/ubak
+exclude_params=();
+while read suf
+do
+  exclude_params+=( " --exclude=$suf" )
+  or="-o"
+done < "$UBAK"
+echo rsync -aH --delete-during "${exclude_params[@]}" --include=myproject / /media/volgrp/media/laptop/
