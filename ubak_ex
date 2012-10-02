@@ -5,3 +5,5 @@ myproject
 /dev/
 /tmp/
 /run/udev/data/
+/run/
+/var/log/
