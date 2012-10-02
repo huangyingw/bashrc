@@ -1,7 +1,0 @@
-/proc
-/etc/fstab
-/boot/grub/grub.cfg
-/lost+found
-/media
-/sys
-myproject
