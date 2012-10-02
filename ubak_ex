@@ -4,3 +4,4 @@
 myproject
 /dev/
 /tmp/
+/run/udev/data/
