@@ -9,6 +9,6 @@ done < "$UBAKEX"
 include_params=();
 while read suf
 do
-  include_params+=( " --exclude=$suf" )
+  include_params+=( " --include=$suf" )
 done < "$UBAKIN"
-rsync -aHinv --delete-during "${exclude_params[@]}" "${include_params[@]}" / /media/volgrp/media/laptop/
+echo rsync -aHinv --delete-during "${exclude_params[@]}" "${include_params[@]}" / /media/volgrp/media/laptop/

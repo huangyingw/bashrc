@@ -10,4 +10,3 @@ fi
 
 rsync -aHinv --delete-during \
 		"${SOURCE}" "${TARGET}"|vim -
-

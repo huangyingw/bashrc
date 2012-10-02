@@ -1,5 +1,6 @@
-/proc
-/lost+found
-/media
-/sys
+/proc/
+/media/
+/sys/
 myproject
+/dev/
+/tmp/
