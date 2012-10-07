@@ -16,4 +16,4 @@ if [ ! -d "${TARGET}" ];
 then   
   mkdir -p "${TARGET}"
 fi
-rsync -aHinv --delete-during "${exclude_params[@]}" /media/volgrp/media/laptop/ / > result.cc
+rsync -aH --delete-during "${exclude_params[@]}" /media/volgrp/media/laptop/ /
