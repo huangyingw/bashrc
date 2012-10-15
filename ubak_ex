@@ -7,3 +7,5 @@ myproject
 /run/udev/data/
 /run/
 /var/log/
+/var/tmp/
+/var/backups/
