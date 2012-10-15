@@ -1,4 +1,9 @@
 #! /bin/bash
+SOURCE=/media/volgrp/media/laptop/
+if [ -n "$1" ]
+then 
+  SOURCE="$1"
+fi
 UBAKEX=$HOME/bashrc/ubak_ex
 UBAKIN=$HOME/bashrc/ubak_in
 exclude_params=();
@@ -11,4 +16,4 @@ while read suf
 do
   include_params+=( "--include=$suf" )
 done < "$UBAKIN"
-rsync -aH --delete-during "${exclude_params[@]}" "${include_params[@]}" / /media/volgrp/media/laptop/
+rsync -aH --delete-during "${exclude_params[@]}" "${include_params[@]}" / "${SOURCE}"
