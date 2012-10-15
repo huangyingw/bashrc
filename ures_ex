@@ -4,6 +4,7 @@ mdadm.conf
 /boot/initrd.img-*
 /boot/vmlinuz-*
 /var/lib/mldonkey/
+mldonkey
 70-persistent-net.rules
 interfaces
 /etc/initramfs-tools/conf.d/resume
