@@ -1,4 +1,9 @@
 #!/bin/bash 
+SOURCE=/media/volgrp/media/laptop/
+if [ -n "$1" ]
+then 
+  SOURCE="$1"
+fi
 URESEX=$HOME/bashrc/ures_ex
 URESIN=$HOME/bashrc/ures_in
 exclude_params=();
@@ -11,5 +16,5 @@ while read suf
 do
   include_params+=( "--include=$suf" )
 done < "$URESIN"
-rsync -aHinv --delete-during "${exclude_params[@]}" /media/volgrp/media/laptop/ /> result.cc
+rsync -aHinv --delete-during "${exclude_params[@]}" "${SOURCE}" /> result.cc
 
