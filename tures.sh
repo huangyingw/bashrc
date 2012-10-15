@@ -1,6 +1,6 @@
 #!/bin/bash 
-URESEX=./ures_ex
-URESIN=./ures_in
+URESEX=$HOME/bashrc/ures_ex
+URESIN=$HOME/bashrc/ures_in
 exclude_params=();
 while read suf
 do
