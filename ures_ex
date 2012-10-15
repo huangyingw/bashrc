@@ -21,3 +21,4 @@ vmlinuz
 /boot/grub
 vmlinuz.old
 initrd.img.old
+hostname
