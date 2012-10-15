@@ -18,3 +18,4 @@ myproject
 /var/log/
 initrd.img
 vmlinuz
+/boot/grub
