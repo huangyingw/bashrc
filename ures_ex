@@ -5,7 +5,6 @@ mdadm.conf
 /boot/vmlinuz-*
 /var/lib/mldonkey/
 mldonkey
-wireless-settings.conf
 70-persistent-net.rules
 interfaces
 /etc/initramfs-tools/conf.d/resume
