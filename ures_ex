@@ -26,3 +26,4 @@ hostname
 /etc/wicd/
 vmware
 /home/huangyingw/.vmware/
+/etc/resolv.conf
