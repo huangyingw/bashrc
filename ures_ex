@@ -23,3 +23,6 @@ vmlinuz
 vmlinuz.old
 initrd.img.old
 hostname
+/etc/wicd/
+vmware
+/home/huangyingw/.vmware/
