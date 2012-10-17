@@ -1,9 +1,9 @@
-#!/bin/bash 
+#!/bin/bash
 SOURCE=$1
 TARGET=$2
 
 if [ ! -d "${TARGET}" ];
-then   
+then
   mkdir -p "${TARGET}"
 fi
 
@@ -13,6 +13,7 @@ rsync -aH --delete-during \
   --exclude mdadm.conf \
   --exclude /boot/initrd.img-* \
   --exclude /boot/vmlinuz-* \
+  --exclude /boot/grub \
   --exclude /var/lib/mldonkey/temp/ \
   --exclude 70-persistent-net.rules \
   --exclude interfaces \
