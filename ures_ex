@@ -20,6 +20,7 @@ myproject
 initrd.img
 vmlinuz
 /boot/grub
+/etc/vmware
 vmlinuz.old
 initrd.img.old
 hostname
