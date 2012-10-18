@@ -29,3 +29,4 @@ vmware
 /home/huangyingw/.vmware/
 /etc/resolv.conf
 mldonkey-server
+/etc/init.d/vmware-workstation-server
