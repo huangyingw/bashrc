@@ -27,6 +27,7 @@ hostname
 /etc/wicd/
 vmware
 /home/huangyingw/.vmware/
+/root/.vmware/
 /etc/resolv.conf
 mldonkey-server
 /etc/init.d/vmware-workstation-server
