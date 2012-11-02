@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 FILE_POSTFIX=$HOME/bashrc/postfix
 PRUNE_POSTFIX=$HOME/bashrc/prunefix
 PRUNE_FILE=$HOME/bashrc/prunefile
