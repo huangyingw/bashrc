@@ -24,6 +24,7 @@ vmlinuz
 vmlinuz.old
 initrd.img.old
 hostname
+/etc/hosts
 /etc/wicd/
 vmware
 /home/huangyingw/.vmware/
