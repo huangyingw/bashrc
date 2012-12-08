@@ -32,4 +32,3 @@ vmware
 /etc/resolv.conf
 mldonkey-server
 /etc/init.d/vmware-workstation-server
-/etc/udev/rules.d/70-persistent-net.rules
