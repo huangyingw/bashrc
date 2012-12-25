@@ -8,5 +8,4 @@ then
 fi
 
 rsync -aHinv \
-		"${SOURCE}" "${TARGET}"|vim -
-
+		"${SOURCE}" "${TARGET}"> find.cc
