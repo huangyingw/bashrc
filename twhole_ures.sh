@@ -4,8 +4,8 @@ if [ -n "$1" ]
 then 
   SOURCE="$1"
 fi
-URESEX=$HOME/bashrc/whole_ures_ex
-URESIN=$HOME/bashrc/ures_in
+URESEX=whole_ures_ex
+URESIN=ures_in
 exclude_params=();
 while read suf
 do
