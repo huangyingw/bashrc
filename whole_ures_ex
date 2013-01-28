@@ -20,3 +20,4 @@ vmlinuz
 /boot
 hostname
 bashrc
+/EFI/boot/
