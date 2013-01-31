@@ -7,7 +7,7 @@ then
   mkdir -p "${TARGET}"
 fi
 
-rsync -aH --delete-during \
+rsync -aH --delete-before \
   --exclude fstab \
   --exclude grub.cfg \
   --exclude mdadm.conf \
