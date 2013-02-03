@@ -32,3 +32,7 @@ vmware
 /etc/resolv.conf
 mldonkey-server
 /etc/init.d/vmware-workstation-server
+/etc/libvirt/
+/var/lib/libvirt/
+/home/huangyingw/bashrc/
+/root/bashrc/
