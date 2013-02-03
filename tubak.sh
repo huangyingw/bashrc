@@ -1,5 +1,6 @@
 #! /bin/bash
-SOURCE=/media/volgrp/media/laptop/
+SOURCE=/media/volgrp/media/`hostname`/
+echo $SOURCE
 if [ -n "$1" ]
 then 
   SOURCE="$1"
