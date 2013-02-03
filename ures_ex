@@ -36,3 +36,5 @@ mldonkey-server
 /var/lib/libvirt/
 /home/huangyingw/bashrc/
 /root/bashrc/
+/root/.bashrc
+/home/huangyingw/.bashrc
