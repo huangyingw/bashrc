@@ -1,10 +1,10 @@
 #! /bin/bash
 SOURCE=/media/volgrp/media/`hostname`/
-echo $SOURCE
 if [ -n "$1" ]
 then 
   SOURCE="$1"
 fi
+echo $SOURCE
 UBAKEX=$HOME/bashrc/ubak_ex
 UBAKIN=$HOME/bashrc/ubak_in
 exclude_params=();

@@ -1,10 +1,10 @@
 #!/bin/bash 
 SOURCE=/media/volgrp/media/`hostname`/
-echo $SOURCE
 if [ -n "$1" ]
 then 
   SOURCE="$1"
 fi
+echo $SOURCE
 URESEX=$HOME/bashrc/ures_ex
 URESIN=$HOME/bashrc/ures_in
 exclude_params=();
