@@ -1,2 +1,10 @@
 #!/bin/bash
-find "$1" \( -name \.git -o -name \.svn -o -name \.hg -o -path \/media\/smb \) -prune -type f -o -iname "$2"
+PRUNE_POSTFIX=$HOME/bashrc/prunefix
+prune_params=();
+or="";
+while read suf
+do
+  prune_params+=( $or "-iname" "*.$suf" )
+  or="-o"
+done < "$PRUNE_POSTFIX"
+find "$1" "(" "${prune_params[@]}" ")" -prune -type f -o -iname "$2"
