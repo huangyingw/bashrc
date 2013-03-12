@@ -16,5 +16,5 @@ do
   prune_params+=( $or "-iname" "*.$suf" )
   or="-o"
 done < "$PRUNE_POSTFIX"
-find "$PWD" "(" "${prune_params[@]}" "-o" "-iname" "find.cc" ")" -a -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
+find "$PWD" "(" "${prune_params[@]}" "-o" "-iname" "find.cc" "-o" "-iname" "bin" ")" -a -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
 cscope -qR -i ${TARGET} 
