@@ -7,6 +7,6 @@ then
   mkdir -p "${DIR}"
 fi
 virsh destroy "$ORIGIN" \
-  ; virt-clone --original "$ORIGIN" --name "$TARGET" --file "$DIR"/"$TARGET".qcow2 \
+  ; virt-clone --force --original "$ORIGIN" --name "$TARGET" --file "$DIR"/"$TARGET".qcow2 \
   && virsh start "$TARGET" \
   && virsh dumpxml "$TARGET" > "$DIR"/"$TARGET".xml
