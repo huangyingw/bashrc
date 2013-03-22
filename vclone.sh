@@ -8,4 +8,5 @@ then
 fi
 virsh destroy "$ORIGIN" \
   ; virt-clone --original "$ORIGIN" --name "$TARGET" --file "$DIR"/"$TARGET".qcow2 \
-  && virsh start "$TARGET"
+  && virsh start "$TARGET" \
+  && virsh dumpxml "$TARGET" > "$DIR"/"$TARGET".xml
