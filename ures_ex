@@ -38,3 +38,11 @@ mldonkey-server
 /root/bashrc/
 /root/.bashrc
 /home/huangyingw/.bashrc
+/etc/apparmor.d/libvirt
+/etc/libvirt
+/run/libvirt
+/var/lib/libvirt
+/var/cache/libvirt
+/var/log/libvirt
+/root/.cache/libvirt
+/usr/share/libvirt
