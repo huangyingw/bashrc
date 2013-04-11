@@ -5,7 +5,7 @@ PRUNE_FILE=$HOME/bashrc/prunefile
 find_params=();
 prune_params=();
 prune_files=();
-find_result="$2".cc
+find_result="$2".findresult
 or="";
 grep_params="";
 if [ -n "$3" ]
