@@ -13,3 +13,4 @@ do
   or="-o"
 done < "$PRUNE_POSTFIX"
 find "$1" "(" "${prune_params[@]}" ")" -prune -type f -o -iname "$2" > "$find_result"
+vi "$find_result"

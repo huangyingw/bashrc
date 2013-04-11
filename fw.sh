@@ -32,3 +32,4 @@ do
   or="-o"
 done < "$PRUNE_FILE"
 find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-iname" "$find_result" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -exec fgrep -inH  $grep_params "$2" {} \; > "$find_result"
+vi "$find_result"
