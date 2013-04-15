@@ -2,7 +2,7 @@
 SOURCE=/media/volgrp/media/`hostname`/
 if [ -n "$1" ]
 then 
-  SOURCE="$1"
+    SOURCE="$1"
 fi
 echo $SOURCE
 UBAKEX=$HOME/bashrc/ubak_ex
@@ -10,11 +10,12 @@ UBAKIN=$HOME/bashrc/ubak_in
 exclude_params=();
 while read suf
 do
-  exclude_params+=( "--exclude=$suf" )
+    exclude_params+=( "--exclude=$suf" )
 done < "$UBAKEX"
 include_params=();
 while read suf
 do
-  include_params+=( "--include=$suf" )
+    include_params+=( "--include=$suf" )
 done < "$UBAKIN"
-rsync -aH --delete-during "${exclude_params[@]}" "${include_params[@]}" / "${SOURCE}"
+rsync -aH --delete-during "${exclude_params[@]}" "${include_params[@]}" / "${SOURCE}" \
+    && pm-suspend
