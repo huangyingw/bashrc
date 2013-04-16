@@ -4,3 +4,5 @@ jquery-*.js
 jquery_*.js
 jquery\.*.js
 bin
+WEB-INF
+tmp
