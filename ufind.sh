@@ -33,4 +33,4 @@ function Find()
 }
 
 ls *.findresult|while read ss; do echo $ss|sed 's/.findresult//g'; done \
-  |while read ss;do Find "." "$ss";done
+  |while read ss;do Find "." "$ss" && echo "$ss" is done;done
