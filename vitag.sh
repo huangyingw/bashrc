@@ -23,4 +23,4 @@ do
   or="-o"
 done < "$PRUNE_FILE"
 find "$PWD" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
-cscope -R -i ${TARGET} 
+cscope -qR -i ${TARGET} 
