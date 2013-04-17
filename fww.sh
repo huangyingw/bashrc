@@ -7,7 +7,7 @@ prune_params=();
 prune_files=();
 find_result="$2".findresult
 if [ -f "$find_result" ]; then
-  echo the search is already done, if you want to update, please delete the findresult file first
+  echo the search is already done, if you want to update, please delete the "$find_result" file first
   exit 1
 fi
 or="";
