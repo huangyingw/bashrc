@@ -2,9 +2,9 @@
 PRUNE_POSTFIX=$HOME/bashrc/prunefix
 PRUNE_FILE=$HOME/bashrc/prunefile
 prune_params=();
-find_result="$2".findresult
+find_result="`echo "$2".findresult |sed  -e "s/\//\_/g"`"
 if [ -f "$find_result" ]; then
-  echo the search is already done, if you want to update, please delete the findresult file first
+  echo the search is already done, if you want to update, please delete the "$find_result" file first
   exit 1
 fi
 or="";

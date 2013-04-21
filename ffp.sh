@@ -18,5 +18,5 @@ do
   prune_files+=( $or "-iname" "$suf" )
   or="-o"
 done < "$PRUNE_FILE"
-find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -type f -o -iname "$2" > "$find_result"
+find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -type f -o -ipath *"$2" > "$find_result"
 vi "$find_result"
