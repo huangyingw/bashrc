@@ -15,7 +15,7 @@ do
 done < "$PRUNE_POSTFIX"
 while read suf
 do
-  prune_files+=( $or "-iname" "$suf" )
+  prune_files+=( $or "-iname" "*.$suf" )
   or="-o"
 done < "$PRUNE_FILE"
 find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -type f -o -ipath *"$2" > "$find_result"
