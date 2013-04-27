@@ -1,8 +1,16 @@
 #!/bin/bash
+update=false
+while getopts ab: name
+do
+  case $name in
+    u)     update=true;;
+esac
+done
 PRUNE_POSTFIX=$HOME/bashrc/prunefix
 prune_params=();
 find_result="$2".findresult
-if [ -f "$find_result" ]; then
+echo $update
+if [ ! $update ] && [ -f "$find_result" ]; then
   echo the search is already done, if you want to update, please delete the findresult file first
   exit 1
 fi
@@ -13,4 +21,4 @@ do
   or="-o"
 done < "$PRUNE_POSTFIX"
 find "$1" "(" "${prune_params[@]}" ")" -prune -type f -o -iname "$2" > "$find_result"
-vi "$find_result"
+#vi "$find_result"
