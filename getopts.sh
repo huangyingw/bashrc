@@ -52,3 +52,4 @@ then
   usage
   exit 1
 fi
+echo test:$TEST server:$SERVER passwd:$PASSWD
