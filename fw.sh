@@ -5,7 +5,7 @@ PRUNE_FILE=$HOME/bashrc/prunefile
 find_params=();
 prune_params=();
 prune_files=();
-find_result="`echo "$2".findresult |sed  -e "s/\//\_/g"`"
+find_result="`echo "$2".fw.findresult |sed  -e "s/\//\_/g"`"
 if [ -f "$find_result" ]; then
   echo the search is already done, if you want to update, please delete the "$find_result" file first
   exit 1
