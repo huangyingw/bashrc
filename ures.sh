@@ -10,6 +10,7 @@ then
   TARGET="$2"
 fi
 echo $SOURCE
+echo $TARGET
 URESEX=$HOME/bashrc/ures_ex
 URESIN=$HOME/bashrc/ures_in
 exclude_params=();
@@ -22,4 +23,4 @@ while read suf
 do
   include_params+=( "--include=$suf" )
 done < "$URESIN"
-echo rsync -aH --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}"
+rsync -aH --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}"
