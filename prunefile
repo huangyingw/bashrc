@@ -1,6 +1,9 @@
-find.cc
-jquery.js
-jquery-*.js
-jquery_*.js
-jquery\.*.js
 bin
+build
+diff.cc
+find.cc
+jquery-*.js
+jquery.js
+jquery\.*.js
+jquery_*.js
+tmp
