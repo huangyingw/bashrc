@@ -7,4 +7,4 @@ jquery-*.js
 jquery.js
 jquery\.*.js
 jquery_*.js
-tmp
+*.tmp
