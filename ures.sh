@@ -23,4 +23,5 @@ while read suf
 do
   include_params+=( "--include=$suf" )
 done < "$URESIN"
-rsync -aH --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}"
+rsync -aH --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}" \
+    && pm-suspend
