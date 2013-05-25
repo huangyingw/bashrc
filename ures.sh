@@ -24,4 +24,5 @@ do
   include_params+=( "--include=$suf" )
 done < "$URESIN"
 rsync -aH --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}" \
-    && pm-suspend
+  && cp -v "${SOURCE}"boot/vmlinuz-* "${SOURCE}"boot/initrd.img-*   "${TARGET}"boot/ \
+  && pm-suspend
