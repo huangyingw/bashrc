@@ -3,6 +3,12 @@ TARGET='/export/home1/username/cscope_db/cscope.files'
 FILE_POSTFIX=$HOME/bashrc/postfix
 PRUNE_POSTFIX=$HOME/bashrc/prunefix
 PRUNE_FILE=$HOME/bashrc/prunefile
+PARA=-R
+OS=`uname`
+if [ $OS == "Linux" ]
+then
+  PARA=-qR
+fi
 find_params=();
 or="";
 prune_params=();
@@ -23,4 +29,4 @@ do
   or="-o"
 done < "$PRUNE_FILE"
 find "$PWD" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
-cscope -R -i ${TARGET} 
+cscope $PARA -i ${TARGET} 
