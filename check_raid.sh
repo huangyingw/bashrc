@@ -2,7 +2,7 @@
 HOSTNAME=`hostname`
 if [ $HOSTNAME != "ssd" ]
 then
-  exit 0;
+  return
 fi
 raid_count=`mdadm -D /dev/md/* |grep "active sync"|wc -l`
 if [ $raid_count -lt 4 ] 
