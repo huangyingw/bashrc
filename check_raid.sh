@@ -1,6 +1,6 @@
 #!/bin/bash
-OS=`uname`
-if [ $OS == "Darwin" ]
+HOSTNAME=`hostname`
+if [ $HOSTNAME != "ssd" ]
 then
   exit 0;
 fi
