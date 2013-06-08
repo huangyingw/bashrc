@@ -46,3 +46,4 @@ mldonkey-server
 /var/log/libvirt
 /root/.cache/libvirt
 /usr/share/libvirt
+/var/lib/ureadahead/debugfs
