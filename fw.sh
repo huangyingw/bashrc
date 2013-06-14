@@ -12,7 +12,7 @@ if [ -f "$find_result" ]; then
     u)
       ;;
     ?)
-      echo exit now
+      vi "$find_result"
       exit 1
       ;;
   esac
