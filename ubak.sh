@@ -18,4 +18,4 @@ do
     include_params+=( "--include=$suf" )
 done < "$UBAKIN"
 rsync -aH --delete-during "${exclude_params[@]}" "${include_params[@]}" / "${TARGET}" \
-    && pm-suspend
+    && $HOME/bashrc/sleep.sh
