@@ -1,0 +1,21 @@
+Binary file ./.fd.sh.swp matches
+Binary file ./.ff.sh.swp matches
+Binary file ./.fw.sh.swp matches
+./f.findresult:./fw.sh:8:find_result="$2".findresult
+./f.findresult:./fw.sh:10:  echo the search is already done, if you want to update, please delete the *.findresult file first
+./f.findresult:./fww.sh:8:find_result="$2".findresult
+./fd.sh:find_result="$2".findresult
+./fd.sh:  echo the search is already done, if you want to update, please delete the findresult file first
+./ff.sh:find_result="$2".findresult
+./ff.sh:  echo the search is already done, if you want to update, please delete the findresult file first
+./fw.sh:find_result="$2".findresult
+./fw.sh:  echo the search is already done, if you want to update, please delete the findresult file first
+./fww.sh:find_result="$2".findresult
+./fww.sh:  echo the search is already done, if you want to update, please delete the findresult file first
+./if.findresult:./fd.sh:7:  echo the search is already done, if you want to update, please delete the findresult file first
+./if.findresult:./ff.sh:7:  echo the search is already done, if you want to update, please delete the findresult file first
+./if.findresult:./fw.sh:10:  echo the search is already done, if you want to update, please delete the findresult file first
+./if.findresult:./fww.sh:10:  echo the search is already done, if you want to update, please delete the findresult file first
+./prunefix:.findresult
+./ufind.sh:  find_result="$2".findresult
+./ufind.sh:ls *.findresult|while read ss; do echo $ss|sed 's/.findresult//g'; done \

@@ -1,0 +1,7 @@
+./gbrD.sh:3:for ss in `git remote -v |awk '/\(fetch\)$/{print $1}'`; do git push $ss :$1; done
+./gcof.sh:3:commit=`git log --all -- "$1" |awk 'NR==1{print $2}'`
+./gfix.sh:3:for ss in `git remote -v |awk '/\(fetch\)$/{print $1}'`; do git push $ss :fix; done
+./gpl.sh:2:branch=`git branch |awk '/\*/{print $2}'`
+./gpl.sh:3:for ss in `git remote -v |awk '/\(fetch\)$/{print $1}'`
+./gps.sh:2:for ss in `git remote -v |awk '/\(fetch\)$/{print $1}'`; do git push --all $ss && git push --tag $ss; done
+./gsf.sh:2:commit=`git log --all -- "$1" |awk 'NR==1{print $2}'`

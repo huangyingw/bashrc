@@ -1,0 +1,19 @@
+./apt-mirror.sh:8:BASEDIR=~/mirror/
+./apt-mirror.sh:29:      ${RSYNCSOURCE} ${BASEDIR}
+./check_running.sh:8:BASEDIR=/media/volgrp/mirror/
+./check_running.sh:26:    ${RSYNCSOURCE} ${BASEDIR}
+./cscope.sh:19:find "$PWD" "(" "${prune_params[@]}" "-o" "-iname" "find.cc" ")" -a -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
+./exiso.sh:7:target="`echo "${source}" |sed  -e "s/\.iso$/\_iso/g;s/\.ISO$/\_iso/g"`"
+./fr.sh:31:  sed -i "s#$2#$3#g" "$file"
+./gagh.sh:6:folder=`pwd | sed -e 's/\/.*\///g'`
+./gcb.sh:5:x=`echo ${x} | sed -e "s|$HOME|/media/smb|"`
+./gcl.sh:7:	x=`echo $1 | sed -e "s|/media/smb|$HOME|"`
+./gclb.sh:5:x=`echo ${x} | sed -e "s|/.*/myproject|/media/smb/myproject|"`
+./mklnk.sh:4:LNSOURCE=`echo $SOURCE | sed 's/\/$//'`
+./select_copy.sh:4:  echo $ss|sed -n "s/[^\/]*.properties$//p"
+./ufind.sh:35:ls *.findresult|while read ss; do echo $ss|sed 's/.findresult//g'; done \
+./vitag.sh:25:find "$PWD" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
+./vlog.sh:6:  |sed 's/\(["'\''\]\)/\\\1/g;s/^/"/;s/$/"/' \
+./vsd.sh:3:DOMAIN=`echo "$XMLFILE" |sed 's/\.xml//g'`
+./work.sh:6:BASEDIR=/media/volgrp/software/work/platform/cnbuild/vmo.isf2_1_pudong_drop2/
+./work.sh:24:    rsync -ahHv --log-file=/root/rlog --delete-after ${RSYNCSOURCE} ${BASEDIR}
