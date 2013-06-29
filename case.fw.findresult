@@ -1,0 +1,3 @@
+./move.sh:6:  case $var in
+./getopts.sh:26:  case $OPTION in
+./tmove.sh:6:  case $var in
