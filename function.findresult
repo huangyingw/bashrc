@@ -1,0 +1,4 @@
+./move.sh:3:function IsSlash()
+./fgh.sh:2:function iterate_dir(){
+./tmove.sh:3:function IsSlash()
+./fgs.sh:2:function rec_dir() {
