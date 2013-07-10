@@ -1,5 +1,0 @@
-./getopts.sh:4:usage()
-./getopts.sh:7:  usage: $0 options
-./getopts.sh:28:      usage
-./getopts.sh:44:      usage
-./getopts.sh:52:  usage
