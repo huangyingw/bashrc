@@ -37,3 +37,11 @@ mldonkey-server
 /root/.bashrc
 /home/huangyingw/.bashrc
 /var/lib/ureadahead/debugfs
+/var/backups/
+/var/cache/nscd/
+/var/lib/dhcp/dhclient.leases
+/var/lib/pm-utils/
+/var/lib/upower/
+/var/lib/wicd/dhclient.conf
+/var/lib/wicd/configurations/6466b35fa7c3
+/var/tmp/
