@@ -19,6 +19,7 @@ properties
 py
 sh
 sql
+template
 xhtml
 xml
 xml.model
