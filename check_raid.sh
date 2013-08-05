@@ -1,7 +1,6 @@
 #!/bin/bash
-HOSTNAME=`hostname`
-if [ $HOSTNAME != "ssd" ]
-then
+CHECKFILE=/media/volgrp/to_check_raid
+if ! [ -f "$CHECKFILE" ]; then
   return
 fi
 raid_count=`mdadm -D /dev/md/* |grep "active sync"|wc -l`
