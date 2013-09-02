@@ -4,7 +4,7 @@ then
   echo "Please provide commit message"
   exit 1
 fi
-find "$1" -type f -mtime -100 -exec ls -rt {} \+|tail -n 100|while read ss
+find "$1" -type f -mtime -100 -size +700M -exec ls -rt {} \+|tail -n 100|while read ss
 do 
     ftemp=`basename "$ss"`
     ln -s "$ss" /media/volgrp/latest/"$ftemp"
