@@ -1,11 +1,9 @@
 #! /bin/bash
-if [ -z "$1" ];
-then
-  echo "Please provide source directory"
-  exit 1
+if [ -f $HOME/bashrc/fileDir ]; then
+  FAV=`cat $HOME/bashrc/fileDir |grep fav|awk '{print $3}'`
 fi
 rm /media/volgrp/fnine/*
-find "$1" -type f -size +700M -name 9\* |while read ss
+find "$FAV" -type f -size +700M -name 9\* |while read ss
 do 
     ftemp=`basename "$ss"`
     ln -s "$ss" /media/volgrp/fnine/"$ftemp"
