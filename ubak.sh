@@ -1,5 +1,5 @@
 #! /bin/bash
-TARGET=/media/volgrp/media/`hostname`/
+TARGET=/media/volgrp/slink/media/`hostname`/
 if [ -n "$1" ]
 then 
     TARGET="$1"
@@ -19,3 +19,4 @@ do
 done < "$UBAKIN"
 rsync -aH --delete-during "${exclude_params[@]}" "${include_params[@]}" / "${TARGET}" \
     && $HOME/bashrc/sleep.sh
+

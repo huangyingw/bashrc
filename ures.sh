@@ -1,5 +1,5 @@
 #!/bin/bash 
-SOURCE=/media/volgrp/media/`hostname`/
+SOURCE=/media/volgrp/slink/media/`hostname`/ 
 TARGET=/
 if [ -n "$1" ]
 then 
