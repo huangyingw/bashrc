@@ -24,7 +24,7 @@ do
   include_params+=( "--include=$suf" )
 done < "$URESIN"
 rsync -aH --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}" \
-  && cp -v "${SOURCE}"boot/vmlinuz-* "${SOURCE}"boot/initrd.img-*   "${TARGET}"boot/ \
+  && scp -v "${SOURCE}"boot/vmlinuz-* "${SOURCE}"boot/initrd.img-*   "${TARGET}"boot/ \
   && update-initramfs -u \
   && update-grub2 \
   && $HOME/bashrc/sleep.sh
