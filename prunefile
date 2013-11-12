@@ -1,5 +1,5 @@
+*.tmp
 bin
-build
 diff.cc
 dwww.xetusone.com
 find.cc
@@ -7,4 +7,3 @@ jquery-*.js
 jquery.js
 jquery\.*.js
 jquery_*.js
-*.tmp
