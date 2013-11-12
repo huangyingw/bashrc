@@ -10,16 +10,23 @@
 /home/huangyingw/.Skype/huangyingw/msn.db
 /home/huangyingw/.Skype/huangyingw/msn.db-journal
 /home/huangyingw/.Skype/shared.xml
-/home/huangyingw/.cache/ubuntuone/log/syncdaemon.log
+/home/huangyingw/.cache/
+/home/huangyingw/.config/google-chrome/
+/home/huangyingw/.config/google-chrome/Default/Cookies
+/home/huangyingw/.config/google-chrome/Default/Cookies-journal
+/home/huangyingw/.config/google-chrome/Local State
+/home/huangyingw/.dropbox/l/
+/home/huangyingw/.local/share/gnome-shell/
 /home/huangyingw/.netbeans/7.3/config/Preferences/org/netbeans/modules/uihandler.properties
 /home/huangyingw/.netbeans/7.3/var/log/uigestures
-/home/huangyingw/.thunderbird/f9x2ih6v.default/
-/home/huangyingw/.thunderbird/f9x2ih6v.default/global-messages-db.sqlite
-/home/huangyingw/.thunderbird/f9x2ih6v.default/panacea.dat
 /home/huangyingw/.xsession-errors
 /home/huangyingw/bashrc/find.cc
+/home/huangyingw/find.cc
+/home/huangyingw/vimrc/.vim/view/
 /media/
 /proc/
+/root/.viminfo
+/root/find.cc
 /run/
 /run/udev/data/
 /sys/
