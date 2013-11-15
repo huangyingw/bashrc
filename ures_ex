@@ -11,21 +11,20 @@
 /etc/wicd/
 /home/huangyingw/.Skype/
 /home/huangyingw/.cache/
-/home/huangyingw/.config/google-chrome/
+/home/huangyingw/.config/google-chrome/Default/Cookies
+/home/huangyingw/.config/google-chrome/Default/Cookies-journal
+/home/huangyingw/.config/google-chrome/Local State
 /home/huangyingw/.dropbox/l/
 /home/huangyingw/.local/share/gnome-shell/
 /home/huangyingw/.local/share/gnome-shell/application_state
 /home/huangyingw/.vmware/
 /home/huangyingw/.xsession-errors
-/home/huangyingw/bashrc/
 /home/huangyingw/find.cc
 /home/huangyingw/vimrc/.vim/view/
 /media/
 /proc/
-/root/.bashrc
 /root/.viminfo
 /root/.vmware/
-/root/bashrc/
 /root/find.cc
 /run/
 /run/udev/data/
