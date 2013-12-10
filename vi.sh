@@ -1,6 +1,7 @@
 #!/bin/bash
+TARGET='/export/home1/username/cscope_db/'`pwd |sed -e "s/^.*\///g"`
 if [ -z "$1" ];
 then
-  vim /export/home1/username/cscope_db/cscope.files
+  vim $TARGET
 fi
 vim "$1"
