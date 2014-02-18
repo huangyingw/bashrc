@@ -1,5 +1,6 @@
 #!/bin/bash
-TARGET='/export/home1/username/cscope_db/cscope.files'
+TARGET='/export/home1/username/cscope_db/'`pwd |sed -e "s/^.*\///g"`
+echo $TARGET
 FILE_POSTFIX=$HOME/bashrc/postfix
 PRUNE_POSTFIX=$HOME/bashrc/prunefix
 PARA=-bR
