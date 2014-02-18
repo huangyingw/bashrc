@@ -6,6 +6,7 @@ cpp
 css
 drl
 dtd
+gitignore
 gradle
 h
 hpp
@@ -24,7 +25,9 @@ sh
 sql
 template
 tld
+vala
 vim
+vimrc
 vm
 xhtml
 xml
