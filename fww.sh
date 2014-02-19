@@ -5,7 +5,7 @@ PRUNE_FILE=$HOME/bashrc/prunefile
 find_params=();
 prune_params=();
 prune_files=();
-find_result="`echo "$2".fww.findresult |sed  -e "s/\//\_/g"`"
+find_result="`echo "$2".fww.findresult |sed  -e "s/\//\_/g;s/\ /\_/g"`"
 if [ -f "$find_result" ]; then
   read -p "the search is already done, if you want to update, press u --> " update
   case $update in
