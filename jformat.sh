@@ -10,7 +10,7 @@ else
 fi
 if  ( git status "$folderForGit"|grep -q 'nothing to commit' )
 then
-  find "$folderForGit" -type f -name \*.py -exec autopep8 --in-place {} \; 
+  find "$folderForGit" -type f -name \*.java -o -name \*.vala -exec astyle --mode=java -fxejoO -y -t2 --style=java -pcHs2 {} \; 
 else
   echo -e "${red}the git repository is unclean, please check it before continuing... ${NC}"
-fi 
+fi

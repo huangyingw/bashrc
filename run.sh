@@ -1,5 +1,4 @@
 #!/bin/bash
-make
 if [ -f "run.sh" ]; then
   ./run.sh
 else
@@ -7,4 +6,3 @@ else
     ./run
   fi
 fi
-
