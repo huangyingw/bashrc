@@ -40,3 +40,4 @@ do
 done < "$PRUNE_FILE"
 find -L "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-name" "$find_result" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -exec fgrep -wnH  $grep_params "$2" {} \; > "$find_result"
 ~/bashrc/cscope.sh
+vi "$find_result"
