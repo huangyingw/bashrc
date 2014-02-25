@@ -1,7 +1,7 @@
 #!/bin/bash
 TARGET='/export/home1/username/cscope_db/'`pwd |sed -e "s/^.*\///g"`
 echo $TARGET
-FILE_POSTFIX=$HOME/bashrc/postfix
+FILE_POSTFIX=$HOME/bashrc/cscope_postfix
 PRUNE_POSTFIX=$HOME/bashrc/prunefix
 PRUNE_FILE=$HOME/bashrc/prunefile
 PARA=-bR
@@ -29,6 +29,6 @@ do
   prune_files+=( $or "-iname" "$suf" )
   or="-o"
 done < "$PRUNE_FILE"
-find -L "$PWD" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
+find -L "$PWD" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
 cscope $PARA -i ${TARGET} 
 vi ${TARGET}
