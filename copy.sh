@@ -4,8 +4,8 @@ TARGET=$2
 
 if [ ! -d "${TARGET}" ];
 then   
-    mkdir -p "${TARGET}"
+  mkdir -p "${TARGET}"
 fi
 
 rsync -aH \
-	"${SOURCE}" "${TARGET}" \
+  "${SOURCE}" "${TARGET}" \
