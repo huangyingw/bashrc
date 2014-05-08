@@ -1,6 +1,2 @@
 #!/bin/bash
-dbus-send --system --print-reply     --dest="org.freedesktop.UPower"     /org/freedesktop/UPower     org.freedesktop.UPower.Suspend
-if [ $? -ne 0 ]; then
-  pm-suspend
-fi
-
+sudo -u huangyingw gnome-screensaver-command --lock;sudo pm-suspend
