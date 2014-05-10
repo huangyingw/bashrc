@@ -10,7 +10,8 @@ else
 fi
 if  ( git status "$folderForGit"|grep -q 'nothing to commit' )
 then
-  find "$folderForGit" -type f -name \*.java -exec astyle --mode=java -fxejoO  -t2 --style=java {} \; 
+  LIST=( -name \*.java -o -name \*.vala )
+  find "$folderForGit" -type f \( "${LIST[@]}" \) -exec astyle --mode=java -nfxejoO --max-code-length=80 -t2 --style=java -pcHs2 {} \; 
 else
   echo -e "${red}the git repository is unclean, please check it before continuing... ${NC}"
 fi

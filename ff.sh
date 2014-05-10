@@ -9,7 +9,7 @@ if [ -f "$find_result" ]; then
     u)
       ;;
     ?)
-      echo exit now
+      vi "$find_result"
       exit 1
       ;;
   esac
@@ -25,5 +25,5 @@ do
   prune_files+=( $or "-iname" "*.$suf" )
   or="-o"
 done < "$PRUNE_FILE"
-find -L "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -type f -o -iname "$2" > "$find_result"
+find -L "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -type f -o -iname "$2" -print > "$find_result"
 vi "$find_result"
