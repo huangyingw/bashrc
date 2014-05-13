@@ -11,5 +11,5 @@ if [ -f "$find_result" ]; then
       ;;
   esac
 fi
-grep "$2" "$1" -rnH > "$find_result"
+grep "$2" "$1" -rnH --exclude=\*.findresult --exclude=cscope.out > "$find_result"
 vi "$find_result"
