@@ -15,5 +15,6 @@ grep "$2" "$1" -rnH \
   --exclude=\*.findresult \
   --exclude=\*.swp \
   --exclude=cscope.out \
+  --exclude=cscope.in.out \
   > "$find_result"
 vi "$find_result"
