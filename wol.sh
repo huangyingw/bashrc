@@ -8,4 +8,7 @@ elif [ "$1" == "toshiba" ]; then
 elif [ "$1" == "thinkpad" ]; then
   wakeonlan 00:21:cc:c0:53:a9 #thinkpad
   ping thinkpad
+elif [ "$1" == "mldonkey" ]; then
+  wakeonlan 00:01:c0:12:92:a2 #mldonkey
+  ping mldonkey
 fi
