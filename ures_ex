@@ -3,28 +3,21 @@
 /boot/vmlinuz-*
 /dev/
 /etc/hosts
-/etc/init.d/vmware-workstation-server
 /etc/initramfs-tools/conf.d/resume
 /etc/resolv.conf
 /etc/samba/dhcp.conf
 /etc/udev/rules.d/70-persistent-net.rules
-/etc/vmware
 /home/huangyingw/.Skype/
 /home/huangyingw/.cache/
-/home/huangyingw/.config/google-chrome/Default/Cookies
-/home/huangyingw/.config/google-chrome/Default/Cookies-journal
-/home/huangyingw/.config/google-chrome/Local State
 /home/huangyingw/.dropbox/l/
 /home/huangyingw/.local/share/gnome-shell/
 /home/huangyingw/.local/share/gnome-shell/application_state
-/home/huangyingw/.vmware/
 /home/huangyingw/.xsession-errors
 /home/huangyingw/find.cc
 /home/huangyingw/vimrc/.vim/view/
 /media/
 /proc/
 /root/.viminfo
-/root/.vmware/
 /root/find.cc
 /run/
 /run/udev/data/
@@ -39,7 +32,6 @@
 /var/lib/ureadahead/debugfs
 /var/log/
 /var/tmp/
-70-persistent-net.rules
 bashrc
 fstab
 grub.cfg
@@ -53,4 +45,3 @@ mldonkey-server
 myproject
 vmlinuz
 vmlinuz.old
-vmware
