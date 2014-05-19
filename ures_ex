@@ -7,6 +7,7 @@
 /etc/initramfs-tools/conf.d/resume
 /etc/resolv.conf
 /etc/samba/dhcp.conf
+/etc/udev/rules.d/70-persistent-net.rules
 /etc/vmware
 /home/huangyingw/.Skype/
 /home/huangyingw/.cache/
@@ -39,6 +40,7 @@
 /var/log/
 /var/tmp/
 70-persistent-net.rules
+bashrc
 fstab
 grub.cfg
 hostname
@@ -52,5 +54,3 @@ myproject
 vmlinuz
 vmlinuz.old
 vmware
-bashrc
-/etc/udev/rules.d/70-persistent-net.rules
