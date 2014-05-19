@@ -23,5 +23,5 @@ while read suf
 do
   include_params+=( "--include=$suf" )
 done < "$URESIN"
-rsync -aHinv --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}"> find.cc
+rsync -aHinv --force --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}"> find.cc
 vi find.cc

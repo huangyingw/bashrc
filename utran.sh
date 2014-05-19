@@ -23,7 +23,7 @@ while read suf
 do
   include_params+=( "--include=$suf" )
 done < "$UTRANIN"
-rsync -aH --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}" \
+rsync -aH --force --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}" \
   && scp -v "${SOURCE}"boot/vmlinuz-* "${SOURCE}"boot/initrd.img-*   "${TARGET}"boot/ \
   && update-initramfs -u \
   && update-grub2 \
