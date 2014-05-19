@@ -7,6 +7,6 @@ then
     mkdir -p "${TARGET}"
 fi
 
-rsync -aH --delete-during \
+rsync -aH --delete-during --force \
 		"${SOURCE}" "${TARGET}"
 

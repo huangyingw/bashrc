@@ -24,10 +24,8 @@ then
     mkdir -p "$TARGET"
   fi
 
-  rsync -aH \
-    "$SOURCE" "$TARGET" \
-    && rsync -aH \
-    "$SOURCE" "$TARGET" \
+  rsync -aH --force "$SOURCE" "$TARGET" \
+    && rsync -aH --force "$SOURCE" "$TARGET" \
     && rm -fr "$SOURCE"
 else
   echo "please choose the different dir!"
