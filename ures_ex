@@ -8,7 +8,6 @@
 /etc/resolv.conf
 /etc/samba/dhcp.conf
 /etc/vmware
-/etc/wicd/
 /home/huangyingw/.Skype/
 /home/huangyingw/.cache/
 /home/huangyingw/.config/google-chrome/Default/Cookies
@@ -37,8 +36,6 @@
 /var/lib/pm-utils/
 /var/lib/upower/
 /var/lib/ureadahead/debugfs
-/var/lib/wicd/configurations/6466b35fa7c3
-/var/lib/wicd/dhclient.conf
 /var/log/
 /var/tmp/
 70-persistent-net.rules
@@ -55,3 +52,5 @@ myproject
 vmlinuz
 vmlinuz.old
 vmware
+bashrc
+/etc/udev/rules.d/70-persistent-net.rules

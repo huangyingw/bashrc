@@ -27,4 +27,4 @@ rsync -aH --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}" \
   && scp -v "${SOURCE}"boot/vmlinuz-* "${SOURCE}"boot/initrd.img-*   "${TARGET}"boot/ \
   && update-initramfs -u \
   && update-grub2 \
-  && $HOME/bashrc/sleep.sh
+  && reboot
