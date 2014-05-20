@@ -11,19 +11,19 @@ then
 fi
 echo $SOURCE
 echo $TARGET
-URESEX="$HOME/bashrc/ures_ex"
-URESIN="$HOME/bashrc/ures_in"
+UTRANEX="$HOME/bashrc/utran_ex"
+UTRANIN="$HOME/bashrc/utran_in"
 exclude_params=();
 while read suf
 do
   exclude_params+=( "--exclude=$suf" )
-done < "$URESEX"
+done < "$UTRANEX"
 include_params=();
 while read suf
 do
   include_params+=( "--include=$suf" )
-done < "$URESIN"
-rsync -aH --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}" \
+done < "$UTRANIN"
+rsync -aH --force --delete-during "${exclude_params[@]}" "${SOURCE}" "${TARGET}" \
   && scp -v "${SOURCE}"boot/vmlinuz-* "${SOURCE}"boot/initrd.img-*   "${TARGET}"boot/ \
   && update-initramfs -u \
   && update-grub2 \
