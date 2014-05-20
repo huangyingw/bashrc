@@ -6,7 +6,6 @@
 /etc/initramfs-tools/conf.d/resume
 /etc/resolv.conf
 /etc/udev/rules.d/70-persistent-net.rules
-/home/huangyingw/.Skype/
 /home/huangyingw/.cache/
 /home/huangyingw/.local/share/gnome-shell/
 /home/huangyingw/.local/share/gnome-shell/application_state
