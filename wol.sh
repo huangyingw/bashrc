@@ -11,4 +11,7 @@ elif [ "$1" == "thinkpad" ]; then
 elif [ "$1" == "mldonkey" ]; then
   wakeonlan 00:01:c0:12:92:a2 #mldonkey
   ping mldonkey
+elif [ "$1" == "mini" ]; then
+  wakeonlan 00:01:c0:12:94:05 #mini
+  ping mini
 fi
