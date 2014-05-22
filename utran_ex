@@ -2,13 +2,11 @@
 /boot/initrd.img-*
 /boot/vmlinuz-*
 /dev/
+/etc/hosts
 /etc/initramfs-tools/conf.d/resume
 /etc/resolv.conf
-/etc/samba/dhcp.conf
 /etc/udev/rules.d/70-persistent-net.rules
-/home/huangyingw/.Skype/
 /home/huangyingw/.cache/
-/home/huangyingw/.dropbox/l/
 /home/huangyingw/.local/share/gnome-shell/
 /home/huangyingw/.local/share/gnome-shell/application_state
 /home/huangyingw/.xsession-errors
@@ -44,3 +42,8 @@ mldonkey-server
 myproject
 vmlinuz
 vmlinuz.old
+/etc/wicd/manager-settings.conf
+/etc/wicd/wired-settings.conf
+/etc/wicd/wireless-settings.conf
+/var/lib/wicd/dhclient.conf
+/var/lib/wicd/configurations/6466b35fa7c3
