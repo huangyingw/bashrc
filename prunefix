@@ -1,8 +1,9 @@
-findresult
 cvs
+findresult
 git
 hg
 metadata
+pyc
 svn
-swp
 swo
+swp
