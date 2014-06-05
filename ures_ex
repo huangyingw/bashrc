@@ -6,9 +6,7 @@
 /etc/resolv.conf
 /etc/samba/dhcp.conf
 /etc/udev/rules.d/70-persistent-net.rules
-/home/huangyingw/.Skype/
 /home/huangyingw/.cache/
-/home/huangyingw/.dropbox/l/
 /home/huangyingw/.local/share/gnome-shell/
 /home/huangyingw/.local/share/gnome-shell/application_state
 /home/huangyingw/.xsession-errors
@@ -41,6 +39,5 @@ interfaces
 mdadm.conf
 mldonkey
 mldonkey-server
-myproject
 vmlinuz
 vmlinuz.old

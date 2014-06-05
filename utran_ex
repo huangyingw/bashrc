@@ -39,7 +39,6 @@ interfaces
 mdadm.conf
 mldonkey
 mldonkey-server
-myproject
 vmlinuz
 vmlinuz.old
 /etc/wicd/manager-settings.conf
