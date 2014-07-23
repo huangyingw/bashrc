@@ -137,9 +137,6 @@
 /var/lib/ureadahead/debugfs/ieee80211/phy0/netdev:wlan0/stations/08:86:3b:4a:c0:8c/tx_retry_count
 /var/lib/ureadahead/debugfs/ieee80211/phy0/netdev:wlan0/stations/08:86:3b:4a:c0:8c/tx_retry_failed
 /var/lib/ureadahead/debugfs/ieee80211/phy0/netdev:wlan0/stations/08:86:3b:4a:c0:8c/wep_weak_iv_count
-/var/lib/wicd/configurations/08863b4ac08c
-/var/lib/wicd/configurations/6466b35fa7c3
-/var/lib/wicd/dhclient.conf
 /var/log/
 /var/tmp/
 myproject
