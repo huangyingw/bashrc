@@ -5,8 +5,8 @@ then
     TARGET="$1":$TARGET
 fi
 echo $TARGET
-UBAKEX=$HOME/bashrc/ubak_ex
-UBAKIN=$HOME/bashrc/ubak_in
+UBAKEX="$HOME/bashrc/ubak_ex"
+UBAKIN="$HOME/bashrc/ubak_in"
 exclude_params=();
 while read suf
 do
@@ -17,6 +17,5 @@ while read suf
 do
     include_params+=( "--include=$suf" )
 done < "$UBAKIN"
-rsync -aH --delete-during "${exclude_params[@]}" "${include_params[@]}" / "${TARGET}" \
+rsync -aH --force --delete-during "${exclude_params[@]}" "${include_params[@]}" / "${TARGET}" \
     && $HOME/bashrc/sleep.sh
-
