@@ -11,5 +11,4 @@ while read suf
 do
   exclude_params+=( "--exclude=$suf" )
 done < "$NETSYNC"
-rsync -e ssh -aH --delete-during "${exclude_params[@]}" / "${TARGET}":/ \
-  && ssh "${TARGET}" shutdown -h now
+rsync -e ssh -aH --delete-during "${exclude_params[@]}" / "${TARGET}":/
