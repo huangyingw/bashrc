@@ -11,7 +11,7 @@ fi
 if  ( git status "$folderForGit"|grep -q 'nothing to commit' )
 then
   LIST=( -name \*.java -o -name \*.vala )
-  find "$folderForGit" -type f \( "${LIST[@]}" \) -exec astyle --mode=java -nfxejoO -y --max-code-length=80 -s2 --style=java -pcH {} \; 
+  find "$folderForGit" -type f \( "${LIST[@]}" \) -exec astyle --mode=java -nfxejoO -y --max-code-length=150 -s2 --style=java -pcH {} \; 
 else
   echo -e "${red}the git repository is unclean, please check it before continuing... ${NC}"
   exit 1
