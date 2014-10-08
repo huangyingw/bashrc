@@ -1,9 +1,9 @@
 #!/bin/bash
 TARGET='/export/home1/username/cscope_db/'`pwd |sed -e "s/^.*\///g"`
 echo $TARGET
-FILE_POSTFIX=$HOME/bashrc/cscope_postfix
-PRUNE_POSTFIX=$HOME/bashrc/prunefix
-PRUNE_FILE=$HOME/bashrc/prunefile
+FILE_POSTFIX="$HOME/bashrc/cscope_postfix"
+PRUNE_POSTFIX="$HOME/bashrc/prunefix"
+PRUNE_FILE="$HOME/bashrc/prunefile"
 PARA=-bR
 OS=`uname`
 if [ $OS == "Linux" ]

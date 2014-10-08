@@ -1,4 +1,5 @@
 #! /bin/bash
+OS=`uname`
 if [ "$OS" == "Linux" ]
 then
   autossh -X "$1"
