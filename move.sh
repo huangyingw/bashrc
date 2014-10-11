@@ -16,9 +16,15 @@ function IsSlash()
   esac
 }
 
+if [ $1 = / ]  || [ $2 = / ] 
+then
+  echo -e "${red}please not use / directory ! ... ${NC}"
+  exit 1
+fi
+
 if [ -L ${1%/} ] || [ -L ${2%/} ]
 then
-  echo -e "${red}please not use simbo link! ... ${NC}"
+  echo -e "${red}please not use simbo link ! ... ${NC}"
   exit 1
 fi
 
