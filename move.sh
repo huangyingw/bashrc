@@ -16,7 +16,7 @@ function IsSlash()
   esac
 }
 
-if [ -L $1 ] || [ -L $2 ]
+if [ -L ${1%/} ] || [ -L ${2%/} ]
 then
   echo -e "${red}please not use simbo link! ... ${NC}"
   exit 1
