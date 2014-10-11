@@ -15,6 +15,13 @@ function IsSlash()
       ;;
   esac
 }
+
+if [ -L $1 ] || [ -L $2 ]
+then
+  echo -e "${red}please not use simbo link! ... ${NC}"
+  exit 1
+fi
+
 IsSlash "$1"
 SOURCE=$returnstring
 IsSlash "$2"
@@ -31,5 +38,6 @@ then
     && rsync -aH --force "$SOURCE" "$TARGET" \
     && rm -fr "$SOURCE"
 else
-  echo "please choose the different dir!"
+  echo -e "${red}please choose the different dir! ... ${NC}"
+  exit 1
 fi
