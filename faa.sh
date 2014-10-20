@@ -32,4 +32,8 @@ do
   or="-o"
 done < "$PRUNE_FILE"
 find -L "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-name" "$find_result" ")" -prune -o -type f -exec fgrep -wnH  $grep_params "$2" {} \; > "$find_result"
-~/bashrc/cscope.sh
+if [ -f cscope.out ]; then
+  ~/bashrc/cscope.sh
+else
+  vi "$find_result"
+fi

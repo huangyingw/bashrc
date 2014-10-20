@@ -23,6 +23,8 @@ php
 project
 properties
 py
+raml
+rb
 sh
 sql
 template

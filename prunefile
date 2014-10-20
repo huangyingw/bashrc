@@ -10,3 +10,4 @@ jquery_*.js
 tmp
 cscope.out
 classes
+test-classes
