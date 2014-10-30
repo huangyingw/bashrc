@@ -1,8 +1,8 @@
 #!/bin/bash 
 TARGET=thinkpad
-if [ -n "$2" ]
+if [ -n "$1" ]
 then 
-  TARGET="$2"
+  TARGET="$1"
 fi
 echo $TARGET
 NETSYNC="$HOME/bashrc/netsync_ex"

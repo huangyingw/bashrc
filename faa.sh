@@ -1,5 +1,5 @@
 #!/bin/bash
-PRUNE_POSTFIX="$HOME/bashrc/prunefix"
+PRUNE_POSTFIX="$HOME/bashrc/faaprunefix"
 PRUNE_FILE="$HOME/bashrc/prunefile"
 prune_params=();
 prune_files=();
@@ -32,4 +32,4 @@ do
   or="-o"
 done < "$PRUNE_FILE"
 find -L "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-name" "$find_result" ")" -prune -o -type f -exec fgrep -wnH  $grep_params "$2" {} \; > "$find_result"
-vi "$find_result"
+~/bashrc/cscope.sh
