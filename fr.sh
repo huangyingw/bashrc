@@ -1,4 +1,7 @@
 #!/bin/bash
+red='\033[0;31m'
+green='\033[0;32m'
+NC='\033[0;0m' # No Color
 FILE_POSTFIX=$HOME/bashrc/postfix
 PRUNE_POSTFIX=$HOME/bashrc/prunefix
 PRUNE_FILE=$HOME/bashrc/prunefile
@@ -28,4 +31,16 @@ do
 done < "$PRUNE_FILE"
 FIND=$2
 REPLACE=$3
-find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -exec sed -i .bak "s|${FIND}|${REPLACE}|g" {} +
+if [ -n "$1" ];
+then
+  folderForGit="$1"
+else
+  folderForGit=.
+fi
+if  ( git status "$folderForGit"|grep -q 'nothing to commit' )
+then
+  find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -exec sed -i .bak "s|${FIND}|${REPLACE}|g" {} +
+else
+  echo -e "${red}the git repository is unclean, please check it before continuing... ${NC}"
+  exit 1
+fi
