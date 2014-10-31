@@ -39,7 +39,7 @@ else
 fi
 if  ( git status "$folderForGit"|grep -q 'nothing to commit' )
 then
-  find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -exec sed -i .bak "s|${FIND}|${REPLACE}|g" {} +
+  find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -exec sed -i ""  "s|${FIND}|${REPLACE}|g" {} +
 else
   echo -e "${red}the git repository is unclean, please check it before continuing... ${NC}"
   exit 1
