@@ -37,4 +37,10 @@ then
 else
   folderForGit=.
 fi
-find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -exec sed -i""  "s|${FIND}|${REPLACE}|g" {} +
+OS=`uname`
+if [ "$OS" == "Linux" ]
+then
+  find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -exec sed -i""  "s|${FIND}|${REPLACE}|g" {} +
+else
+  find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -exec sed -i ""  "s|${FIND}|${REPLACE}|g" {} +
+fi
