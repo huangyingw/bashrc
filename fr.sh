@@ -1,4 +1,7 @@
 #!/bin/bash
+red='\033[0;31m'
+green='\033[0;32m'
+NC='\033[0;0m' # No Color
 FILE_POSTFIX=$HOME/bashrc/postfix
 PRUNE_POSTFIX=$HOME/bashrc/prunefix
 PRUNE_FILE=$HOME/bashrc/prunefile
@@ -26,4 +29,18 @@ do
   prune_files+=( $or "-iname" "$suf" )
   or="-o"
 done < "$PRUNE_FILE"
-find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -exec sed -i.bak "s#\<$2\>#$3#g" {} \;
+FIND=$2
+REPLACE=$3
+if [ -n "$1" ];
+then
+  folderForGit="$1"
+else
+  folderForGit=.
+fi
+OS=`uname`
+if [ "$OS" == "Linux" ]
+then
+  find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -exec sed -i""  "s|${FIND}|${REPLACE}|g" {} +
+else
+  find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -exec sed -i ""  "s|${FIND}|${REPLACE}|g" {} +
+fi
