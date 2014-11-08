@@ -11,7 +11,7 @@ if [ -f "$find_result" ]; then
       ;;
   esac
 fi
-find -L "$1" -type f -iname "$2" -print > "$find_result"
+find "$1" -type f -iname "$2" -print > "$find_result"
 if [ -f cscope.out ]; then
   ~/bashrc/cscope.sh
 else
