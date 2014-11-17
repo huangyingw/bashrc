@@ -25,7 +25,7 @@ do
   prune_files+=( $or "-iname" "$suf" )
   or="-o"
 done < "$PRUNE_FILE"
-find -L "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -type d -o -iname "$2" -print > "$find_result"
+find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -type d -o -iname "$2" -print > "$find_result"
 if [ -f cscope.out ]; then
   ~/bashrc/cscope.sh
 else
