@@ -31,9 +31,10 @@ do
   prune_files+=( $or "-iname" "$suf" )
   or="-o"
 done < "$PRUNE_FILE"
-find -L "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-name" "$find_result" ")" -prune -o -type f -exec fgrep -wnH  $grep_params "$2" {} \; > "$find_result"
 if [ -f cscope.out ]; then
+  find -L "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-name" "$find_result" ")" -prune -o -type f -exec fgrep -wnH  $grep_params "$2" {} \; > "$find_result"
   ~/bashrc/cscope.sh
 else
+  find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-name" "$find_result" ")" -prune -o -type f -exec fgrep -wnH  $grep_params "$2" {} \; > "$find_result"
   vi "$find_result"
 fi
