@@ -1,6 +1,6 @@
 #!/bin/bash
-PRUNE_POSTFIX=$HOME/bashrc/prunefix
-PRUNE_FILE=$HOME/bashrc/prunefile
+PRUNE_POSTFIX="$HOME/bashrc/prunefix"
+PRUNE_FILE="$HOME/bashrc/prunefile"
 prune_params=();
 find_result="`echo "$2".fd.findresult |sed  -e "s/\//\_/g"`"
 if [ -f "$find_result" ]; then
@@ -26,4 +26,8 @@ do
   or="-o"
 done < "$PRUNE_FILE"
 find -L "$1" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -prune -type d -o -iname "$2" -print > "$find_result"
-vi "$find_result"
+if [ -f cscope.out ]; then
+  ~/bashrc/cscope.sh
+else
+  vi "$find_result"
+fi
