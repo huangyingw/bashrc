@@ -17,5 +17,5 @@ while read suf
 do
   include_params+=( "--include=$suf" )
 done < "$UBAKIN"
-rsync -aHinv --delete-during "${exclude_params[@]}" "${include_params[@]}" / "${TARGET}"> find.cc
-vi find.cc
+rsync -aHinv --delete-during "${exclude_params[@]}" "${include_params[@]}" / "${TARGET}"> find.findresult
+vi find.findresult
