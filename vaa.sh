@@ -1,5 +1,4 @@
 #!/bin/bash
-keyWord="$2"
 function upsearch () {
   test / == "$PWD" && return || test -e "$1" && echo "found: " "$PWD" && return || cd .. && upsearch "$1"
 }
