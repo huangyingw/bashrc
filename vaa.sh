@@ -1,5 +1,5 @@
 #!/bin/bash
-function upsearch () {
+upsearch () {
   test / == "$PWD" && return || test -e "$1" && echo "found: " "$PWD" && return || cd .. && upsearch "$1"
 }
 upsearch "cscope.out"
