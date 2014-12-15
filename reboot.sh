@@ -1,3 +1,3 @@
 #!/bin/bash
-$HOME/kvmrc/vsave.sh \
+~/kvmrc/vsave.sh \
   && reboot
