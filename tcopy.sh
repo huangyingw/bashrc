@@ -8,4 +8,5 @@ then
 fi
 
 rsync -aHinv \
-		"${SOURCE}" "${TARGET}"> find.cc
+		"${SOURCE}" "${TARGET}"> find.findresult
+vi find.findresult
