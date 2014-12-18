@@ -1,6 +1,6 @@
 #!/bin/bash
 PRUNE_POSTFIX="$HOME/bashrc/faaprunefix"
-PRUNE_FILE="$HOME/bashrc/prunefile"
+PRUNE_FILE="$HOME/bashrc/faaprunefile"
 prune_params=();
 prune_files=();
 find_result="`echo "$2".faa.findresult |sed  -e "s/\//\_/g;s/\ /\_/g"`"
