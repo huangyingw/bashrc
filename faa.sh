@@ -9,8 +9,10 @@ if [ -f "$find_result" ]; then
   case $update in
     u)
       ;;
+    "")
+      exit 1
+      ;;
     ?)
-      vi "$find_result"
       exit 1
       ;;
   esac
