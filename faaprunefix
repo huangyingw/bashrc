@@ -1,4 +1,6 @@
+bak
 cvs
+findresult
 git
 hg
 metadata
@@ -6,5 +8,3 @@ pyc
 svn
 swo
 swp
-findresult
-bak

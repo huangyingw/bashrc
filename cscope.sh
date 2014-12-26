@@ -4,12 +4,7 @@ echo $TARGET
 FILE_POSTFIX="$HOME/bashrc/cscope_postfix"
 PRUNE_POSTFIX="$HOME/bashrc/prunefix"
 PRUNE_FILE="$HOME/bashrc/prunefile"
-PARA=-bR
-OS=`uname`
-if [ $OS == "Linux" ]
-then
-  PARA=-bqR
-fi
+PARA=-bqR
 find_params=();
 or="";
 prune_params=();
