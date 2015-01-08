@@ -1,4 +1,11 @@
 #!/bin/bash
+if [ -z "$1" ];
+then
+  TARGETEDIR="$PWD"
+else
+  TARGETEDIR="$1"
+fi
+cd "$TARGETEDIR"
 TARGET='/export/home1/username/cscope_db/'`pwd |sed -e "s/^.*\///g"`
 echo $TARGET
 FILE_POSTFIX="$HOME/bashrc/cscope_postfix"
@@ -24,5 +31,6 @@ do
   prune_files+=( $or "-iname" "$suf" )
   or="-o"
 done < "$PRUNE_FILE"
-find -L "$PWD" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
+find -L "$TARGETEDIR" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o "(" "${find_params[@]}" "-o" "-iname" "makefile" ")" -type f -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
 cscope $PARA -i ${TARGET} 
+read -p "press any key to continue...." update
