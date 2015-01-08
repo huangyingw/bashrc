@@ -38,7 +38,6 @@ cd "$1"
 echo "result in " "$find_result"
 if [ -f "$1/"cscope.out ]; then
   find -L "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-name" "$find_result" ")" -prune -o -type f -exec fgrep -wnH  $grep_params "$2" {} \; > "$find_result"
-  ~/bashrc/cscope.sh
 else
   find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-name" "$find_result" ")" -prune -o -type f -exec fgrep -wnH  $grep_params "$2" {} \; > "$find_result"
   vi "$find_result"
