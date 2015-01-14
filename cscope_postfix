@@ -18,7 +18,10 @@ java
 js
 json
 jsp
+m
+pbxproj
 php
+plist
 project
 properties
 py
@@ -26,6 +29,7 @@ raml
 rb
 sh
 sql
+storyboard
 template
 templates
 tld
@@ -33,7 +37,10 @@ vala
 vim
 vimrc
 vm
+xcscheme
+xcworkspacedata
 xhtml
+xib
 xml
 xml.model
 xsd
