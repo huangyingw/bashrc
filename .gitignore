@@ -39,3 +39,5 @@ work.sh.lck
 work/
 workspace/
 *.findresult
+work_prunefile
+work_prunefix

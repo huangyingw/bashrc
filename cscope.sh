@@ -9,8 +9,18 @@ cd "$TARGETEDIR"
 TARGET='/export/home1/username/cscope_db/'`pwd |sed -e "s/^.*\///g"`
 echo $TARGET
 FILE_POSTFIX="$HOME/bashrc/cscope_postfix"
-PRUNE_POSTFIX="$HOME/bashrc/prunefix"
-PRUNE_FILE="$HOME/bashrc/prunefile"
+if [ -f "$HOME/bashrc/work_prunefix" ];
+then
+  PRUNE_POSTFIX="$HOME/bashrc/work_prunefix"
+else
+  PRUNE_POSTFIX="$HOME/bashrc/prunefix"
+fi
+if [ -f "$HOME/bashrc/work_prunefile" ];
+then
+  PRUNE_FILE="$HOME/bashrc/work_prunefile"
+else
+  PRUNE_FILE="$HOME/bashrc/prunefile"
+fi
 PARA=-bqR
 find_params=();
 or="";
