@@ -1,4 +1,11 @@
 #!/bin/bash
+if [ -z "$1" ];
+then
+  TARGETEDIR="$PWD"
+else
+  TARGETEDIR="$1"
+fi
+cd "$TARGETEDIR"
 TARGET='/export/home1/username/cscope_db/'`pwd |sed -e "s/^.*\///g"`
 echo $TARGET
 FILE_POSTFIX="$HOME/bashrc/cscope_postfix"
