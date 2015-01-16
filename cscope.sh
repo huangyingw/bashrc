@@ -8,18 +8,8 @@ fi
 cd "$TARGETEDIR"
 TARGET='/export/home1/username/cscope_db/'`pwd |sed -e "s/^.*\///g"`
 echo $TARGET
-if [ -f "$HOME/bashrc/work_prunefix" ];
-then
-  PRUNE_POSTFIX="$HOME/bashrc/work_prunefix"
-else
-  PRUNE_POSTFIX="$HOME/bashrc/prunefix"
-fi
-if [ -f "$HOME/bashrc/work_prunefile" ];
-then
-  PRUNE_FILE="$HOME/bashrc/work_prunefile"
-else
-  PRUNE_FILE="$HOME/bashrc/prunefile"
-fi
+PRUNE_POSTFIX=prunefix.findresult
+PRUNE_FILE=prunefile.findresult
 PARA=-bqR
 prune_params=();
 or="";
