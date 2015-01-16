@@ -1,13 +1,9 @@
-*.tmp
 bin
-diff.cc
+classes
 dwww.xetusone.com
-find.cc
 jquery-*.js
 jquery.js
 jquery\.*.js
 jquery_*.js
-tmp
-cscope.out
-classes
+target
 test-classes
