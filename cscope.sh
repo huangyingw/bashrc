@@ -23,6 +23,6 @@ do
   prune_files+=( $or "-iname" "$suf" )
   or="-o"
 done < "$PRUNE_FILE"
-find -L "$TARGETEDIR" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o -type f -size -1M -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
+find -L "$TARGETEDIR" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o -type f -size -1000k -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
 cscope $PARA -i ${TARGET} 
 read -p "press any key to continue...." update
