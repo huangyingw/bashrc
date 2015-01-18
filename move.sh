@@ -12,7 +12,9 @@ then
   then   
     mkdir -p "$TARGET"
   fi
-  rsync --remove-source-files -aH --force "$1" "$2" \
+  ~/bashrc/copy.sh "$1" "$2" \ 
+  && ~/bashrc/copy.sh "$1" "$2" \ 
+  && rsync --remove-source-files -aH --force "$1" "$2" \
     && rm -fr "$1"
 else
   echo -e "${red}same dir --> ${SOURCE} ... ${NC}"
