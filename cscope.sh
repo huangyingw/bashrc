@@ -11,7 +11,6 @@ echo $TARGET
 PRUNE_POSTFIX=prunefix.findresult
 PRUNE_FILE=prunefile.findresult
 PARA=-bqR
-prune_params=();
 or="";
 while read suf
 do
