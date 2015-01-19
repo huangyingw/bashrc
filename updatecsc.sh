@@ -1,5 +1,5 @@
 #!/bin/bash
-PROPERTIES=`hostname`.csc.properties
+PROPERTIES=~/bashrc/`hostname`.csc.properties
 while read ss
 do
   ~/bashrc/cscope.sh "$ss"
