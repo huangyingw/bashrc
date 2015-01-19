@@ -5,5 +5,4 @@ jquery-*.js
 jquery.js
 jquery\.*.js
 jquery_*.js
-target
 test-classes
