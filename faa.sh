@@ -1,6 +1,6 @@
 #!/bin/bash
-PRUNE_POSTFIX=prunefix.findresult
-PRUNE_FILE=prunefile.findresult
+PRUNE_POSTFIX="$1/"prunefix.findresult
+PRUNE_FILE="$1/"prunefile.findresult
 prune_params=();
 prune_files=();
 find_result="$1/""`echo "$2".faa.findresult |sed  -e "s/\//\_/g;s/\ /\_/g"`"
@@ -42,3 +42,4 @@ else
   find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-name" "$find_result" ")" -prune -o -type f -exec fgrep -wnH  $grep_params "$2" {} \; > "$find_result"
   vi "$find_result"
 fi
+read -p "press any key to continue --> " update
