@@ -2,9 +2,9 @@
 red='\033[0;31m'
 green='\033[0;32m'
 NC='\033[0;0m' # No Color
-FILE_POSTFIX=$HOME/bashrc/postfix
-PRUNE_POSTFIX=$HOME/bashrc/prunefix
-PRUNE_FILE=$HOME/bashrc/prunefile
+FILE_POSTFIX=postfix.findresult
+PRUNE_POSTFIX=prunefix.findresult
+PRUNE_FILE=prunefile.findresult
 find_params=();
 prune_params=();
 prune_files=();
