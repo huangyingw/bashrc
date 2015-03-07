@@ -36,9 +36,5 @@ done < "$PRUNE_FILE"
 echo "search in " "$1"
 cd "$1"
 echo "result in " "$find_result"
-if [ -f "$1/"cscope.out ]; then
-  find -L "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-name" "$find_result" ")" -prune -o -type f -exec fgrep -inH  $grep_params "$2" {} \; > "$find_result"
-else
-  find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-name" "$find_result" ")" -prune -o -type f -exec fgrep -inH  $grep_params "$2" {} \; > "$find_result"
-  vi "$find_result"
-fi
+find "$1" "(" "${prune_params[@]}" "${prune_files[@]}" "-o" "-name" "$find_result" ")" -prune -o -type f -exec fgrep -inH  $grep_params "$2" {} \; > "$find_result"
+vi "$find_result"
