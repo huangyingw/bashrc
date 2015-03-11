@@ -30,7 +30,7 @@ do
 done < "$PRUNE_POSTFIX"
 while read suf
 do
-  prune_files+=( $or "-iname" "$suf" )
+  prune_files+=( $or "-wholename" "$suf" )
   or="-o"
 done < "$PRUNE_FILE"
 echo "search in " "$1"
