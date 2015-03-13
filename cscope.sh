@@ -1,9 +1,9 @@
 #!/bin/bash
 if [ -z "$1" ];
 then
-  TARGETEDIR="$PWD"
+  TARGETEDIR=`realpath "$PWD"`
 else
-  TARGETEDIR="$1"
+  TARGETEDIR=`realpath "$1"`
 fi
 cd "$TARGETEDIR"
 TARGET='/export/home1/username/cscope_db/'`pwd |sed -e "s/^.*\///g"`
@@ -22,5 +22,5 @@ do
   prune_files+=( $or "-wholename" "$suf" )
   or="-o"
 done < "$PRUNE_FILE"
-find -L "$TARGETEDIR" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o -type f -size -9000k -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
+find "$TARGETEDIR" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o -type f -size -9000k -print |sed 's/\(["'\''\]\)/\\\1/g;s/.*/"&"/' > ${TARGET}
 cscope $PARA -i ${TARGET} 
