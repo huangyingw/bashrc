@@ -1,9 +1,9 @@
 #!/bin/bash
 if [ -z "$1" ];
 then
-  TARGETEDIR="$PWD"
+  TARGETEDIR=`realpath "$PWD"`
 else
-  TARGETEDIR="$1"
+  TARGETEDIR=`realpath "$1"`
 fi
 cd "$TARGETEDIR"
 TARGET='/export/home1/username/cscope_db/'`pwd |sed -e "s/^.*\///g"`
