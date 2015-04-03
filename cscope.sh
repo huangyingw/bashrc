@@ -8,9 +8,9 @@ fi
 cd "$TARGETEDIR"
 TARGET='/export/home1/username/cscope_db/'`pwd |sed -e "s/^.*\///g"`
 echo $TARGET
+PARA=-bqR
 PRUNE_POSTFIX=prunefix.findresult
 PRUNE_FILE=prunefile.findresult
-PARA=-bqR
 or="";
 while read suf
 do
