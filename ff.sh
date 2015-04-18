@@ -13,7 +13,7 @@ if [ -f "$find_result" ]; then
 fi
 find "$1" -type f -iname "$2" -print > "$find_result"
 if [ -f cscope.out ]; then
-  ~/bashrc/cscope.sh
+  ~/loadrc/bashrc/cscope.sh
 else
   vi "$find_result"
 fi

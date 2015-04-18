@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ -z "$1" ]; then
   wakeonlan 00:01:c0:12:94:05 #mldonkey
-  ping mldonkey
+  ping vserver
 elif [ "$1" == "thinkpad" ]; then
   wakeonlan 00:21:cc:c0:53:a9 #thinkpad
   ping thinkpad
