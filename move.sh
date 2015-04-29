@@ -14,7 +14,7 @@ TARGET=`realpath "$2"`
 if [ "$SOURCE" != "$TARGET" ]
 then
   rsync --remove-source-files -aH --force "$1" "$2" \
-    && rm -fr "$1"
+    && ~/loadrc/bashrc/rmEmpty.sh "$1"
 else
   echo -e "${red}same dir --> ${SOURCE} ... ${NC}"
   echo -e "${red}please choose the different dir! ... ${NC}"
