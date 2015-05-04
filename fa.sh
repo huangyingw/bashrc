@@ -37,5 +37,5 @@ do
   prune_files+=( $or "-wholename" "$suf" )
   or="-o"
 done < "$PRUNE_FILE"
-find "$TARGETEDIR" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o -type f -exec fgrep -inH  $grep_params "$2" {} \; > "$find_result"
+find "$TARGETEDIR" "(" "${prune_params[@]}" "${prune_files[@]}" ")" -a -prune -o -type f -size -9000k -exec fgrep -inH  $grep_params "$2" {} \; > "$find_result"
 vi "$find_result"
